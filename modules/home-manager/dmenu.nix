@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let dmenu = pkgs.dmenu.override(
 {
     patches = [
@@ -8,13 +8,12 @@ let dmenu = pkgs.dmenu.override(
 });
 in
 {
-    imports = [ inputs.home-manager.nixosModules.default ];
     options.dmenu = {
         enable =
             lib.mkEnableOption "enables dmenu";
     };
 
     config = lib.mkIf config.dmenu.enable {
-        home.packages = [ dmenu ];
+        environment.systemPackages = [ dmenu ];
     };
 }
