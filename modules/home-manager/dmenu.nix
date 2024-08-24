@@ -8,6 +8,7 @@ let dmenu = pkgs.dmenu.override(
 });
 in
 {
+    imports = [ inputs.home-manager.nixosModules.default ];
     options.dmenu = {
         enable =
             lib.mkEnableOption "enables dmenu";
