@@ -13,13 +13,22 @@
 
 
     home.packages = [
-        # Packages
-        pkgs.freetube
-        pkgs.vesktop
-        pkgs.steam
+        # PACKAGES
+
+        # Useful
         pkgs.brave
         pkgs.btop
         pkgs.tree
+
+        # Programming
+        pkgs.rustup
+
+        # Misc
+        pkgs.freetube
+        pkgs.vesktop
+        pkgs.steam
+
+        # Theming
         pkgs.bibata-cursors
         pkgs.sweet
         pkgs.candy-icons
