@@ -35,7 +35,26 @@
 
     home.sessionVariables = {
       EDITOR = "nvim";
+      XDG_CONFIG_HOME = "${config.home.homeDirectory}/bin/config";
+      XDG_CACHE_HOME = "${config.home.homeDirectory}/bin/cache";
+      XDG_DATA_HOME = "${config.home.homeDirectory}/bin/local/share";
+      ZDOTDIR = "${config.home.homeDirectory}/bin";
+      HISTFILE = "${config.home.homeDirectory}/bin/.histfile";
     };
+
+    # =============== HOME DIRECTORY =============== #
+    # homeDirectory = {
+    #     directories = {
+    #         "bin" = {};
+    #         "Downloads" = {};
+    #         "nixos" = {};
+    #         "Personal" = {};
+    #     };
+    # };
+
+    # xdg.configFile = {
+    #     zshrc = "~/bin/zshrc";
+    # };
 
     # =============== GTK =============== #
     gtk.enable = true;
