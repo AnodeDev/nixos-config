@@ -12,7 +12,7 @@
             after = [ "graphical-session.target" ];
             wants = [ "graphical-session.target" ];
             serviceConfig = {
-                ExecStart = "${pkgs.picom}/bin/picom --config /home/dexter/.config/WindowManagement/picom/picom.conf";
+                ExecStart = "${pkgs.picom}/bin/picom --config /home/dexter/.config/WindowManagement/picom/picom.conf --experimental-backends";
                 Restart = "always";
                 RestartSec = "1s";
             };

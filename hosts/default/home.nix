@@ -1,5 +1,13 @@
 { config, pkgs, lib, ... }:
-
+let dmenu = pkgs.dmenu.override(
+{
+    patches = [
+        ./dmenu-patches/dmenu-center-20240616-36c3d68.diff
+        ./dmenu-patches/dmenu-caseinsensitive-5.0.diff
+        ./dmenu-patches/dmenu-linesbelowprompt-and-fullwidth-20211014.diff
+    ];
+});
+in
 {
     # =============== GENERAL =============== #
     home.username = "dexter";
@@ -12,21 +20,22 @@
             "steam-run"
         ];
 
-    home.packages = with pkgs; [
+
+    home.packages = [
         # Packages
-        dmenu-rs
-        freetube
-        vesktop
-        steam
-        brave
-        btop
-        tree
-        bibata-cursors
-        sweet
-        candy-icons
+        dmenu
+        pkgs.freetube
+        pkgs.vesktop
+        pkgs.steam
+        pkgs.brave
+        pkgs.btop
+        pkgs.tree
+        pkgs.bibata-cursors
+        pkgs.sweet
+        pkgs.candy-icons
 
         # Fonts
-        (nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
+        (pkgs.nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
     ];
 
     home.file = {
