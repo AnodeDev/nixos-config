@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-    options = {
-        xserver.enable =
+    options.xserver = {
+        enable =
             lib.mkEnableOption "enables xserver";
     };
 

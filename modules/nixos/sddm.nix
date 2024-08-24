@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-    options = {
-        sddm.enable =
+    options.sddm = {
+        enable =
             lib.mkEnableOption "enables sddm";
     };
 

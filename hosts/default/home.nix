@@ -1,12 +1,4 @@
 { config, pkgs, lib, ... }:
-let dmenu = pkgs.dmenu.override(
-{
-    patches = [
-        ./dmenu-patches/dmenu-center-20240616-36c3d68.diff
-        ./dmenu-patches/dmenu-linesbelowprompt-and-fullwidth-20211014.diff
-    ];
-});
-in
 {
     # =============== GENERAL =============== #
     home.username = "dexter";
@@ -22,7 +14,6 @@ in
 
     home.packages = [
         # Packages
-        dmenu
         pkgs.freetube
         pkgs.vesktop
         pkgs.steam

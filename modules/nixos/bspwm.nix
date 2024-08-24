@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-    options = {
-        bspwm.enable =
+    options.bspwm = {
+        enable =
             lib.mkEnableOption "enables bspwm";
     };
 

@@ -11,7 +11,6 @@
     imports =
     [
         inputs.home-manager.nixosModules.default
-        ./editors.nix
         ./hardware-configuration.nix
     ];
 
@@ -93,6 +92,15 @@
 
     # DO NOT TOUCH!!!!!
     system.stateVersion = "24.05";
+
+    # =============== EDITORS =============== #
+
+    programs.nano.enable = false;
+
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+    };
 
     # =============== GAMING =============== #
     programs.steam.enable = true;
