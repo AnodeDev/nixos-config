@@ -7,7 +7,7 @@
         ./nixos/sddm.nix
         ./nixos/xserver.nix
         ./nixos/main-user.nix
-        .home-manager/dmenu.nix
+        ./home-manager/dmenu.nix
     ];
 
     xserver.enable =
