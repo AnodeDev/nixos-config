@@ -22,5 +22,7 @@ in
             extraGroups = [ "wheel" "networkManager" ];
             shell = pkgs.zsh;
         };
+
+        programs.zsh.enable = true;
     };
 }
