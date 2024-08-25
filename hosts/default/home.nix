@@ -44,29 +44,8 @@
             "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
     };
 
-    home.sessionVariables = {
-        EDITOR = "nvim";
-        XDG_CONFIG_HOME = "${config.home.homeDirectory}/bin/config";
-        XDG_CACHE_HOME = "${config.home.homeDirectory}/bin/cache";
-        XDG_DATA_HOME = "${config.home.homeDirectory}/bin/local/share";
-        ZDOTDIR = "${config.home.homeDirectory}/bin/zsh";
-        RUSTUP_HOME = "${config.home.homeDirectory}/.config/Languages/rustup";
-        PATH = "${config.home.homeDirectory}/.config/Languages/cargo/bin:$PATH";
-    };
-
     # =============== HOME DIRECTORY =============== #
-    # homeDirectory = {
-    #     directories = {
-    #         "bin" = {};
-    #         "Downloads" = {};
-    #         "nixos" = {};
-    #         "Personal" = {};
-    #     };
-    # };
-
-    # xdg.configFile = {
-    #     zshrc = "~/bin/zshrc";
-    # };
+    
 
     # =============== CONFIGS =============== #
     programs = {
