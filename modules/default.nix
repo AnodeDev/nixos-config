@@ -7,7 +7,6 @@
         ./nixos/sddm.nix
         ./nixos/xserver.nix
         ./nixos/main-user.nix
-        ./home-manager/dmenu.nix
     ];
 
     xserver.enable =
@@ -17,7 +16,5 @@
     picom.enable =
         lib.mkDefault true;
     sddm.enable =
-        lib.mkDefault true;
-    dmenu.enable = 
         lib.mkDefault true;
 }

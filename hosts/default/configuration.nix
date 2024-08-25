@@ -87,15 +87,6 @@
     # DO NOT TOUCH!!!!!
     system.stateVersion = "24.05";
 
-    # =============== EDITORS =============== #
-
-    programs.nano.enable = false;
-
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-    };
-
     # =============== GAMING =============== #
     programs.steam.enable = true;
 
