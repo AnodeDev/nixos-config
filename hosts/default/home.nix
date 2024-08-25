@@ -43,12 +43,13 @@
     };
 
     home.sessionVariables = {
-      EDITOR = "nvim";
-      XDG_CONFIG_HOME = "${config.home.homeDirectory}/bin/config";
-      XDG_CACHE_HOME = "${config.home.homeDirectory}/bin/cache";
-      XDG_DATA_HOME = "${config.home.homeDirectory}/bin/local/share";
-      ZDOTDIR = "${config.home.homeDirectory}/bin";
-      HISTFILE = "${config.home.homeDirectory}/bin/.histfile";
+        EDITOR = "nvim";
+        XDG_CONFIG_HOME = "${config.home.homeDirectory}/bin/config";
+        XDG_CACHE_HOME = "${config.home.homeDirectory}/bin/cache";
+        XDG_DATA_HOME = "${config.home.homeDirectory}/bin/local/share";
+        ZDOTDIR = "${config.home.homeDirectory}/bin/zsh";
+        RUSTUP_HOME = "${config.home.homeDirectory}/.config/Languages/rustup";
+        PATH = "${config.home.homeDirectory}/.config/Languages/cargo/bin:$PATH";
     };
 
     # =============== HOME DIRECTORY =============== #
@@ -64,6 +65,32 @@
     # xdg.configFile = {
     #     zshrc = "~/bin/zshrc";
     # };
+
+    # =============== DOTFILES =============== #
+    git = {
+        enable = true;
+        userName = "Dexter Hedman";
+        userEmail = "dexterhedman05@proton.me";
+
+        ignores = [ "*~" "*.swp" ];
+        extraConfig = {
+            init.defaultBranch = "main";
+            pull.rebase = false;
+        };
+    };
+
+    zsh = {
+        enable = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+        envExtra = ''
+            export PATH=/run/current-system/sw/bin/:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
+        '';
+    };
+
+    bat.enable = true;
+    zoxide.enable = true;
+    fzf.enable = true;
 
     # =============== GTK =============== #
     gtk.enable = true;

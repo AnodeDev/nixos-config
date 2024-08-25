@@ -44,12 +44,6 @@
         pulse.enable = true;
     };
 
-    # Zsh
-    programs.zsh = {
-        enable = true;
-        enableLsColors = true;
-    };
-
     # dconf
     programs.dconf.enable = true;
 
