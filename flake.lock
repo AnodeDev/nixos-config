@@ -36,10 +36,27 @@
         "type": "github"
       }
     },
+    "picom": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1647679735,
+        "narHash": "sha256-4voCAYd0fzJHQjJo4x3RoWz5l3JJbRvgIXn1Kg6nz6Y=",
+        "owner": "jonaburg",
+        "repo": "picom",
+        "rev": "e3c19cd7d1108d114552267f302548c113278d45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonaburg",
+        "repo": "picom",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "picom": "picom"
       }
     }
   },
