@@ -14,8 +14,7 @@
 
         # Setting xkb layout
         services.xserver = {
-            xkb.layout = "se";
-            xkb.options = "eurosign:e";
+            layout = "se";
         };
 
         programs.river = {
