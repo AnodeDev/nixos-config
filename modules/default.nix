@@ -20,6 +20,6 @@
         lib.mkDefault true;
     river.enable =
         lib.mkDefault false;
-    river.enableWayland =
+    sddm.enableWayland =
         lib.mkDefault false;
 }
