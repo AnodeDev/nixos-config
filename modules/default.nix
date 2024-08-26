@@ -7,6 +7,7 @@
         ./nixos/sddm.nix
         ./nixos/xserver.nix
         ./nixos/main-user.nix
+        ./nixos/river.nix
     ];
 
     xserver.enable =
@@ -17,4 +18,8 @@
         lib.mkDefault true;
     sddm.enable =
         lib.mkDefault true;
+    river.enable =
+        lib.mkDefault false;
+    river.enableWayland =
+        lib.mkDefault false;
 }

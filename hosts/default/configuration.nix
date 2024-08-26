@@ -24,6 +24,11 @@
     networking.hostName = "dexter";
     networking.networkmanager.enable = true;
    
+    xserver.enable = lib.mkForce false;
+    bspwm.enable = lib.mkForce false;
+    picom.enable = lib.mkForce false;
+    river.enable = lib.mkForce true;
+
     # Timezone
     time.timeZone = "Europe/Stockholm";
 
