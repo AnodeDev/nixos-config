@@ -12,6 +12,12 @@
             swaybg
         ];
 
+        # Setting xkb layout
+        services.xserver = {
+            xkb.layout = "se";
+            xkb.options = "eurosign:e";
+        };
+
         programs.river = {
             enable = true;
         };

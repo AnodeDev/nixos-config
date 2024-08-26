@@ -48,12 +48,6 @@
         useXkbConfig = true;
     };
 
-    # Setting xkb layout
-    services.xserver = {
-        xkb.layout = "se";
-        xkb.options = "eurosign:e";
-    };
-
     # Audio
     services.pipewire = {
         enable = true;
