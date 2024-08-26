@@ -28,7 +28,7 @@
     xserver.enable = lib.mkForce false;
     bspwm.enable = lib.mkForce false;
     picom.enable = lib.mkForce false;
-    river.enable = lib.mkForce true;
+    sway.enable = lib.mkForce true;
     sddm.enableWayland = lib.mkForce true;
 
     # Dbus

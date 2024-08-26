@@ -14,7 +14,7 @@
 
         # Setting xkb layout
         services.xserver = {
-            layout = "se";
+            xkb.layout = "se";
         };
 
         programs.river = {
