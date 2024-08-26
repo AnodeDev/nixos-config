@@ -10,6 +10,7 @@
         environment.systemPackages = with pkgs; [
             waybar
             swaybg
+            tofi
         ];
 
         programs.sway = {
