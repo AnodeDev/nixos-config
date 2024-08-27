@@ -24,13 +24,6 @@
     networking.hostName = "dexter";
     networking.networkmanager.enable = true;
    
-    # Xserver or Wayland
-    xserver.enable = lib.mkForce false;
-    bspwm.enable = lib.mkForce false;
-    picom.enable = lib.mkForce false;
-    sway.enable = lib.mkForce true;
-    sddm.enableWayland = lib.mkForce true;
-
     # Dbus
     services.dbus.enable = true;
     services.seatd.enable = true;

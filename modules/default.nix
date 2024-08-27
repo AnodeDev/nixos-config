@@ -19,10 +19,10 @@
         lib.mkDefault true;
     sddm.enable =
         lib.mkDefault true;
+    sddm.enableWayland =
+        lib.mkDefault false;
     river.enable =
         lib.mkDefault false;
     sway.enable =
-        lib.mkDefault false;
-    sddm.enableWayland =
         lib.mkDefault false;
 }
