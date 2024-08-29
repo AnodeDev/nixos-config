@@ -54,20 +54,20 @@ in
 
     home.sessionVariables = {
         # XDG setup
-        XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
-        XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
-        XDG_CACHE_HOME = "${config.home.homeDirectory}/.cache";
-        XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+        XDG_DATA_HOME = lib.mkDefault "${config.home.homeDirectory}/.local/share";
+        XDG_STATE_HOME = lib.mkDefault "${config.home.homeDirectory}/.local/state";
+        XDG_CACHE_HOME = lib.mkDefault "${config.home.homeDirectory}/.cache";
+        XDG_CONFIG_HOME = lib.mkDefault "${config.home.homeDirectory}/.config";
 
         # Home directory cleaning
         GTK2_RC_FILES = lib.mkDefault "${config.xdg.configHome}/gtk-2.0/gtkrc";
-        XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
-        XCURSOR_PATH = "/usr/share/icons:${config.xdg.dataHome}/icons";
-        NIX_CONF_DIR = "${config.home.homeDirectory}/nixos";
+        XCOMPOSECACHE = lib.mkDefault "${config.xdg.cacheHome}/X11/xcompose";
+        XCURSOR_PATH = lib.mkDefault "/usr/share/icons:${config.xdg.dataHome}/icons";
+        NIX_CONF_DIR = lib.mkDefault "${config.home.homeDirectory}/nixos";
 
         # Languages
-        CARGO_HOME = "${config.home.homeDirectory}/.config/languages/cargo";
-        RUSTUP_HOME = "${config.home.homeDirectory}/.config/languages/rustup";
+        CARGO_HOME = lib.mkDefault "${config.home.homeDirectory}/.config/languages/cargo";
+        RUSTUP_HOME = lib.mkDefault "${config.home.homeDirectory}/.config/languages/rustup";
 
         # Other
         EDITOR = "nvim";
