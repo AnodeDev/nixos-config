@@ -68,6 +68,7 @@ in
         XCOMPOSECACHE = lib.mkForce "${config.xdg.cacheHome}/X11/xcompose";
         XCURSOR_PATH = lib.mkForce "/usr/share/icons:${config.xdg.dataHome}/icons";
         NIX_CONF_DIR = lib.mkForce "${config.home.homeDirectory}/nixos";
+        GNUPGHOME = lib.mkForce "${config.home.homeDirectory}/Personal/Secret/.gnupg";
 
         # Languages
         CARGO_HOME = lib.mkForce "${config.home.homeDirectory}/.config/languages/cargo";
