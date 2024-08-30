@@ -29,6 +29,7 @@ in
         pkgs.tree
         pkgs.ripgrep
         pkgs.xdg-ninja
+        pkgs.gnupg
         pkgs.pass
         dmenu
 
