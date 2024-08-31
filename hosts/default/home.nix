@@ -34,6 +34,7 @@ in
         pkgs.pass
         pkgs.protonmail-bridge
         pkgs.neomutt
+        pkgs.openssl
         dmenu
 
         # Programming
