@@ -57,7 +57,7 @@
    
     # System-wide packages
     environment.systemPackages = with pkgs; [
-        killall
+        openssl_3_3
         neovim
         polybar
         feh
