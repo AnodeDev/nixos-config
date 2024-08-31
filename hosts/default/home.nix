@@ -32,6 +32,7 @@ in
         pkgs.gnupg
         pkgs.pinentry
         pkgs.pass
+        pkgs.protonmail-bridge
         dmenu
 
         # Programming
