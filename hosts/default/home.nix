@@ -34,10 +34,13 @@ in
         pkgs.pass
         pkgs.protonmail-bridge
         pkgs.neomutt
+        pkgs.openssl_3_3
+        pkgs.offlineimap
         dmenu
 
         # Programming
         pkgs.rustup
+        pkgs.gcc
 
         # Misc
         pkgs.freetube
