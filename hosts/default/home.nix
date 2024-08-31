@@ -33,6 +33,7 @@ in
         pkgs.pinentry
         pkgs.pass
         pkgs.protonmail-bridge
+        pkgs.neomutt
         dmenu
 
         # Programming
