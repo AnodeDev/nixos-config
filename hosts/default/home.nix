@@ -79,6 +79,7 @@ in
 
         # Other
         EDITOR = "nvim";
+        TERM = "kitty-direct";
     };
 
     # =============== HOME DIRECTORY =============== #
