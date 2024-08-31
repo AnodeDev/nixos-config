@@ -58,6 +58,7 @@
     # System-wide packages
     environment.systemPackages = with pkgs; [
         openssl_3_3
+        offlineimap
         neovim
         polybar
         feh
