@@ -32,7 +32,7 @@ in
         pkgs.gnupg
         pkgs.pinentry
         pkgs.pass
-        pkgs.hydroxide
+        pkgs.protonmail-bridge
         pkgs.neomutt
         dmenu
 
