@@ -30,6 +30,7 @@ in
         pkgs.ripgrep
         pkgs.xdg-ninja
         pkgs.gnupg
+        pkgs.pinentry
         pkgs.pass
         dmenu
 
