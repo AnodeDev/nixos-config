@@ -42,6 +42,7 @@ in
         # Programming
         pkgs.rustup
         pkgs.gcc
+        pkgs.python3
 
         # Misc
         pkgs.freetube
