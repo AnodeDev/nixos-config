@@ -36,6 +36,7 @@ in
         pkgs.neomutt
         pkgs.openssl_3_3
         pkgs.offlineimap
+        pkgs.w3m
         dmenu
 
         # Programming
