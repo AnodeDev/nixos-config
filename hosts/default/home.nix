@@ -49,6 +49,7 @@ in
         pkgs.steam
         pkgs.spotify
         pkgs.oh-my-posh
+        pkgs.fzf
 
         # Theming
         pkgs.bibata-cursors
