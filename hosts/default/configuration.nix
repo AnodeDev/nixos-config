@@ -66,6 +66,7 @@
         pwvucontrol
         catppuccin-sddm-corners
         wget
+        unzip
     ];
 
     # Home manager
