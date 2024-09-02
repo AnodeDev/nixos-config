@@ -48,6 +48,7 @@ in
         pkgs.vesktop
         pkgs.steam
         pkgs.spotify
+        pkgs.oh-my-posh
 
         # Theming
         pkgs.bibata-cursors
