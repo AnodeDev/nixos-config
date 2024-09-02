@@ -104,21 +104,6 @@ in
             };
         };
 
-        zsh = {
-            autosuggestion.enable = true;
-            syntaxHighlighting.enable = true;
-            history = {
-                size = 10000;
-                path = "${config.xdg.dataHome}/zsh/history";
-            };
-            zplug = {
-                enable = true;
-                plugins = [
-                    { name = "JanDeDobbeleer/oh-my-posh"; }
-                ];
-            };
-        };
-
         neovim = {
             enable = true;
             defaultEditor = true;
