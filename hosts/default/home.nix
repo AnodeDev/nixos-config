@@ -42,13 +42,14 @@ in
         # Programming
         pkgs.rustup
         pkgs.gcc
-        pkgs.python3
 
         # Misc
         pkgs.freetube
         pkgs.vesktop
         pkgs.steam
         pkgs.spotify
+        pkgs.oh-my-posh
+        pkgs.fzf
 
         # Theming
         pkgs.bibata-cursors
