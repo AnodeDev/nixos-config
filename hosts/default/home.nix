@@ -48,6 +48,7 @@ in
         pkgs.freetube
         pkgs.vesktop
         pkgs.steam
+        pkgs.legendary-gl
         pkgs.spotify
         pkgs.oh-my-posh
         pkgs.fzf
