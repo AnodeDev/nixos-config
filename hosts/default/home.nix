@@ -49,6 +49,7 @@ in
         pkgs.vesktop
         pkgs.steam
         pkgs.legendary-gl
+        pkgs.wine
         pkgs.spotify
         pkgs.oh-my-posh
         pkgs.fzf
