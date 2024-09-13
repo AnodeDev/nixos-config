@@ -69,6 +69,11 @@
         unzip
     ];
 
+    environment.pathsToLink = [
+        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-norm"
+        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-othr"
+    ];
+
     # Home manager
     home-manager = {
         extraSpecialArgs = { inherit inputs; };
