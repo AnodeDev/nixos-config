@@ -90,8 +90,8 @@ in
     };
 
     environment.pathsToLink = [
-        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-norm";
-        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-othr";
+        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-norm"
+        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-othr"
     ];
 
     # =============== HOME DIRECTORY =============== #
