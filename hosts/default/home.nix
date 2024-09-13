@@ -89,6 +89,11 @@ in
         TERM = "kitty-direct";
     };
 
+    environment.pathsToLink = [
+        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-norm";
+        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-othr";
+    ];
+
     # =============== HOME DIRECTORY =============== #
 
     # =============== CONFIGS =============== #
