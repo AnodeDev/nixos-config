@@ -70,8 +70,8 @@
     ];
 
     environment.pathsToLink = [
-        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-norm"
-        "${config.home.homeDirectory}/Personal/Programming/Shellscripts/brave-othr"
+        "/home/dexter/Personal/Programming/Shellscripts/brave-norm"
+        "/home/dexter/Personal/Programming/Shellscripts/brave-othr"
     ];
 
     # Home manager
