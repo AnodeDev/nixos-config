@@ -12,6 +12,6 @@ This configuration is a work-in-progress (WIP), meaning it's far from done and m
 
 TODO:
 
-- [ ] Move configuration files into the `nixos` folder (bspwm, sxhkd, etc.)
+- [ ] Move configuration files into the `nixos`/`root` folder (bspwm, sxhkd, etc.)
 - [ ] Make the configuration more modular (moving more settings into the `modules` folder)
 - [ ] Add more options for window manager, text editor, etc.
