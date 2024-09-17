@@ -8,17 +8,12 @@ let dmenu = pkgs.dmenu.override(
 });
 in
 {
+    imports = [
+        ../../modules/home-default.nix
+    ];
     # =============== GENERAL =============== #
     home.username = "dexter";
     home.homeDirectory = "/home/dexter";
-
-    nixpkgs.config.allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
-            "steam"
-            "steam-original"
-            "steam-run"
-            "spotify"
-        ];
 
     home.packages = [
         # PACKAGES
@@ -62,6 +57,14 @@ in
         # Fonts
         (pkgs.nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
     ];
+
+    unfree = {
+        enable = true;
+        steam = true;
+        spotify = true;
+    };
+
+    variables.cleaning = true;
 
     home.file = {
         "${config.xdg.dataHome}/icons/default".source =
