@@ -10,23 +10,21 @@
         languages =
             lib.mkEnableOption "set programming language paths to .config";
         nvim =
-            lib.mkEnableOption "set nvim as default editor";
+            lib.mkEnableOption "set neovim as EDITOR";
         kitty =
-            lib.mkEnableOption "set kitty as default terminal";
+            lib.mkEnableOption "set kitty as TERM";
     };
 
     config = lib.mkIf config.variables.enable {
-        lib.mkIf config.variables.xdg {
-            home.sessionVariables = {
+        home.sessionVariables = lib.mkMerge [
+            (lib.mkIf config.variables.xdg {
                 XDG_DATA_HOME   = lib.mkForce "${config.home.homeDirectory}/.local/share";
                 XDG_STATE_HOME  = lib.mkForce "${config.home.homeDirectory}/.local/state";
                 XDG_CACHE_HOME  = lib.mkForce "${config.home.homeDirectory}/.cache";
                 XDG_CONFIG_HOME = lib.mkForce "${config.home.homeDirectory}/.config";
-            };
-        };
+            })
 
-        lib.mkIf config.variables.cleaning {
-            home.sessionVariables = {
+            (lib.mkIf config.variables.cleaning {
                 GTK2_RC_FILES = lib.mkForce "${config.xdg.configHome}/gtk-2.0/gtkrc";
                 XCOMPOSECACHE = lib.mkForce "${config.xdg.cacheHome}/X11/xcompose";
                 XCURSOR_PATH  = lib.mkForce "/usr/share/icons:${config.xdg.dataHome}/icons";
@@ -34,19 +32,18 @@
                 GNUPGHOME     = lib.mkForce "${config.home.homeDirectory}/Personal/Secret/.gnupg";
                 W3M_DIR       = lib.mkForce "${config.xdg.dataHome}/w3m";
                 WINEPREFIX    = "${config.xdg.dataHome}/wine";
-            };
-        };
+            })
 
-        lib.mkIf config.variables.nvim {
-            home.sessionVariables = {
+            (lib.mkIf config.variables.languages {
+                CARGO_HOME = lib.mkForce "${config.xdg.configHome}/languages/cargo";
+                RUSTUP_HOME = lib.mkForce "${config.xdg.configHome}/languages/rustup";
+            })
+            (lib.mkIf config.variables.nvim {
                 EDITOR = "nvim";
-            };
-        };
-
-        lib.mkIf config.variables.kitty {
-            home.sessionVariables = {
+            })
+            (lib.mkIf config.variables.kitty {
                 TERM = "kitty-direct";
-            };
-        };
+            })
+        ];
     };
 }

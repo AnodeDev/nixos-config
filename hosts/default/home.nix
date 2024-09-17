@@ -9,9 +9,13 @@ let dmenu = pkgs.dmenu.override(
 in
 {
     imports = [
-        ../../modules/home-default.nix
+        ../../modules/home-manager/cleanup.nix
+        ../../modules/home-manager/unfree.nix
+        ../../modules/home-manager/variables.nix
     ];
+
     # =============== GENERAL =============== #
+
     home.username = "dexter";
     home.homeDirectory = "/home/dexter";
 
@@ -64,7 +68,14 @@ in
         spotify = true;
     };
 
-    variables.cleaning = true;
+    variables = {
+        enable = true;
+        xdg = true;
+        cleaning = true;
+        languages = true;
+        nvim = true;
+        kitty = true;
+    };
 
     home.file = {
         "${config.xdg.dataHome}/icons/default".source =
@@ -72,8 +83,9 @@ in
     };
 
     # =============== HOME DIRECTORY =============== #
-    home.activation = {
-        cleanup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+
+    home.activation.cleanup =
+        lib.hm.dag.entryAfter [ "writeBoundary" ] ''
             rm -rf ~/.gnupg
             rm -f ~/.gtkrc-2.0
             rm -rf ~/.icons
@@ -86,9 +98,9 @@ in
             rm -rf ~/.wine
             rm -f ~/.zcompdump
         '';
-    };
 
     # =============== CONFIGS =============== #
+
     programs = {
         git = {
             enable = true;
@@ -114,6 +126,7 @@ in
     };
 
     # =============== GTK =============== #
+
     gtk.enable = true;
 
     gtk.cursorTheme.package = pkgs.bibata-cursors;
@@ -126,9 +139,11 @@ in
     gtk.iconTheme.name = "candy-icons";
 
     # =============== QT =============== #
+
     qt.enable = true;
 
     # =============== DON'T TOUCH! =============== #
+
     home.stateVersion = "24.05";
 
     # Let Home Manager install and manage itself.

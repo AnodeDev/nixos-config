@@ -10,20 +10,13 @@
     };
 
     config = lib.mkIf config.unfree.enable {
-        lib.mkIf config.unfree.steam {
-            nixpkgs.config.allowUnfreePredicate = pkg:
-                builtins.elem (lib.getName pkg) [
-                    "steam"
-                    "steam-original"
-                    "steam-run"
-                ];
-        };
-
-        lib.mkIf config.unfree.spotify {
-            nixpkgs.config.allowUnfreePredicate = pkg:
-                builtins.elem (lib.getName pkg) [
-                    "spotify"
-                ];
-        };
+        nixpkgs.config.allowUnfreePredicate = pkg:
+        let
+            pkgName = lib.getName pkg;
+        in
+            builtins.elem pkgName (lib.concatLists [
+                (lib.mkIf config.unfree.steam [ "steam" "steam-original" "steam-run" ])
+                (lib.mkIf config.unfree.spotify [ "spotify" ])
+            ]);
     };
 }
