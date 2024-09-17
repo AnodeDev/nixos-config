@@ -69,11 +69,6 @@
         unzip
     ];
 
-    environment.pathsToLink = [
-        "/home/dexter/Personal/Programming/Shellscripts/brave-norm"
-        "/home/dexter/Personal/Programming/Shellscripts/brave-othr"
-    ];
-
     # Home manager
     home-manager = {
         extraSpecialArgs = { inherit inputs; };

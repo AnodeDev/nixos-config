@@ -56,13 +56,14 @@ in
         pkgs.bibata-cursors
         pkgs.sweet
         pkgs.candy-icons
+        pkgs.xbanish
 
         # Fonts
         (pkgs.nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
     ];
 
     home.file = {
-        ".icons/default".source =
+        "${config.xdg.dataHome}/icons/default".source =
             "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
     };
 
@@ -79,6 +80,8 @@ in
         XCURSOR_PATH = lib.mkForce "/usr/share/icons:${config.xdg.dataHome}/icons";
         NIX_CONF_DIR = lib.mkForce "${config.home.homeDirectory}/nixos";
         GNUPGHOME = lib.mkForce "${config.home.homeDirectory}/Personal/Secret/.gnupg";
+        W3M_DIR = lib.mkForce "${config.xdg.dataHome}/w3m";
+        WINEPREFIX = "${config.xdg.dataHome}/wine";
 
         # Languages
         CARGO_HOME = lib.mkForce "${config.home.homeDirectory}/.config/languages/cargo";
@@ -90,6 +93,21 @@ in
     };
 
     # =============== HOME DIRECTORY =============== #
+    home.activation = {
+        cleanup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+            rm -rf ~/.gnupg
+            rm -f ~/.gtkrc-2.0
+            rm -rf ~/.icons
+            rm -rf ~/.compose-cache
+            rm -rf ~/.nix-defexpr
+            rm -rf ~/.nix-profile
+            rm -rf ~/.pki
+            rm -rf ~/.ssh
+            rm -rf ~/.w3m
+            rm -rf ~/.wine
+            rm -f ~/.zcompdump
+        '';
+    };
 
     # =============== CONFIGS =============== #
     programs = {
