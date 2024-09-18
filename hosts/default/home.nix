@@ -9,8 +9,7 @@ let dmenu = pkgs.dmenu.override(
 in
 {
     imports = [
-        ../../modules/home-manager/cleanup.nix
-        ../../modules/home-manager/unfree.nix
+#        ../../modules/home-manager/unfree.nix
         ../../modules/home-manager/variables.nix
     ];
 
@@ -18,6 +17,14 @@ in
 
     home.username = "dexter";
     home.homeDirectory = "/home/dexter";
+
+    nixpkgs.config.allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+            "steam"
+            "steam-original"
+            "steam-run"
+            "spotify"
+        ];
 
     home.packages = [
         # PACKAGES
@@ -46,9 +53,9 @@ in
 
         # Misc
         pkgs.freetube
-        pkgs.vesktop
         pkgs.steam
         pkgs.spotify
+        pkgs.vesktop
         pkgs.oh-my-posh
         pkgs.fzf
 
@@ -62,12 +69,12 @@ in
         (pkgs.nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
     ];
 
-    unfree = {
-        enable = true;
-        steam = true;
-        spotify = true;
-    };
-
+#    unfree = {
+#        enable = true;
+#        steam = true;
+#        spotify = true;
+#    };
+ 
     variables = {
         enable = true;
         xdg = true;

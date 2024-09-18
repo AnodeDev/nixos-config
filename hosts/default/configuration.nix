@@ -1,5 +1,4 @@
 { config, lib, inputs, pkgs, ... }:
-
 {
     nixpkgs.config.allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
@@ -54,6 +53,8 @@
 
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;
+
+    services.xbanish.enable = true;
    
     # System-wide packages
     environment.systemPackages = with pkgs; [
@@ -67,6 +68,7 @@
         catppuccin-sddm-corners
         wget
         unzip
+        xbanish
     ];
 
     # Home manager
