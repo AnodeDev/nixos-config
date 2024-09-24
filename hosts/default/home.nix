@@ -40,7 +40,6 @@ in
         pkgs.pass
         pkgs.protonmail-bridge
         pkgs.neomutt
-        pkgs.openssl_3_3
         pkgs.offlineimap
         pkgs.w3m
         pkgs.mailcap
@@ -95,6 +94,7 @@ in
         lib.hm.dag.entryAfter [ "writeBoundary" ] ''
             rm -rf ~/.gnupg
             rm -f ~/.gtkrc-2.0
+            rm -rf ~/go
             rm -rf ~/.icons
             rm -rf ~/.compose-cache
             rm -rf ~/.nix-defexpr
