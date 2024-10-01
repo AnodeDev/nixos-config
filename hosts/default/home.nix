@@ -57,6 +57,9 @@ in
         pkgs.vesktop
         pkgs.oh-my-posh
         pkgs.fzf
+        pkgs.mupdf
+        pkgs.libreoffice
+        pkgs.flameshot
 
         # Theming
         pkgs.bibata-cursors
@@ -66,6 +69,7 @@ in
 
         # Fonts
         (pkgs.nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
+        pkgs.times-newer-roman
     ];
 
 #    unfree = {
@@ -100,7 +104,6 @@ in
             rm -rf ~/.nix-defexpr
             rm -rf ~/.nix-profile
             rm -rf ~/.pki
-            rm -rf ~/.ssh
             rm -rf ~/.w3m
             rm -rf ~/.wine
             rm -f ~/.zcompdump
