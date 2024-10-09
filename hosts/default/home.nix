@@ -162,7 +162,6 @@ in
                         p.tree-sitter-lua
                         p.tree-sitter-rust
                         p.tree-sitter-bash
-                        p.tree-sitter-zsh
                     ]));
                     config = toLuaFile ../../modules/home-manager/nvim/plugins/treesitter.lua;
                 }
