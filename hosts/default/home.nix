@@ -45,11 +45,6 @@ in
         pkgs.mailcap
         dmenu
 
-        # Programming
-        pkgs.rustup
-        pkgs.gcc
-        pkgs.go
-
         # Misc
         pkgs.freetube
         pkgs.steam
@@ -60,6 +55,7 @@ in
         pkgs.mupdf
         pkgs.libreoffice
         pkgs.flameshot
+        pkgs.direnv
 
         # Theming
         pkgs.bibata-cursors
@@ -98,12 +94,10 @@ in
         lib.hm.dag.entryAfter [ "writeBoundary" ] ''
             rm -rf ~/.gnupg
             rm -f ~/.gtkrc-2.0
-            rm -rf ~/go
             rm -rf ~/.icons
             rm -rf ~/.compose-cache
             rm -rf ~/.nix-defexpr
             rm -rf ~/.nix-profile
-            rm -rf ~/.pki
             rm -rf ~/.w3m
             rm -rf ~/.wine
             rm -f ~/.zcompdump
@@ -124,9 +118,62 @@ in
             };
         };
 
-        neovim = {
+        neovim = 
+        let
+            toLua = str: "lua << EOF\n${str}\nEOF\n";
+            toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+        in
+        {
             enable = true;
             defaultEditor = true;
+
+            viAlias = true;
+            vimAlias = true;
+            vimdiffAlias = true;
+
+            plugins = with pkgs.vimPlugins; [
+                # Theme
+                {
+                    plugin = catppuccin-nvim;
+                    config = toLuaFile ../../modules/home-manager/nvim/plugins/catppuccin.lua;
+                }
+                
+                # Telescope
+                telescope-nvim
+                telescope-fzf-native-nvim
+
+                # Lualine
+                {
+                    plugin = lualine-nvim;
+                    config = toLuaFile ../../modules/home-manager/nvim/plugins/lualine.lua;
+                }
+                nvim-web-devicons
+
+                # Oil
+                {
+                    plugin = oil-nvim;
+                    config = toLuaFile ../../modules/home-manager/nvim/plugins/oil.lua;
+                }
+
+                # Treesitter
+                {
+                    plugin = (nvim-treesitter.withPlugins (p: [
+                        p.tree-sitter-nix
+                        p.tree-sitter-lua
+                        p.tree-sitter-rust
+                        p.tree-sitter-bash
+                        p.tree-sitter-zsh
+                    ]));
+                    config = toLuaFile ../../modules/home-manager/nvim/plugins/treesitter.lua;
+                }
+
+                vim-nix
+            ];
+
+            extraLuaConfig = ''
+                ${builtins.readFile ../../modules/home-manager/nvim/core/options.lua}
+                ${builtins.readFile ../../modules/home-manager/nvim/core/keymaps.lua}
+            '';
         };
 
 
