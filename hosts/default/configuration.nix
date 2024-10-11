@@ -58,7 +58,6 @@
    
     # System-wide packages
     environment.systemPackages = with pkgs; [
-        neovim
         polybar
         feh
         kitty

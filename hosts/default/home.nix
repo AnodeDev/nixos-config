@@ -131,28 +131,38 @@ in
             vimAlias = true;
             vimdiffAlias = true;
 
+            extraPackages = with pkgs; [
+                lua-language-server
+                rnix-lsp
+
+                xclip
+            ];
+
             plugins = with pkgs.vimPlugins; [
                 # Theme
                 {
                     plugin = catppuccin-nvim;
-                    config = toLuaFile ../../modules/home-manager/nvim/plugins/catppuccin.lua;
+                    config = toLuaFile ./nvim/plugins/catppuccin.lua;
                 }
                 
                 # Telescope
-                telescope-nvim
+                {
+                    plugin = telescope-nvim;
+                    config = toLuaFile ./nvim/plugins/telescope.lua;
+                }
                 telescope-fzf-native-nvim
 
                 # Lualine
                 {
                     plugin = lualine-nvim;
-                    config = toLuaFile ../../modules/home-manager/nvim/plugins/lualine.lua;
+                    config = toLuaFile ./nvim/plugins/lualine.lua;
                 }
                 nvim-web-devicons
 
                 # Oil
                 {
                     plugin = oil-nvim;
-                    config = toLuaFile ../../modules/home-manager/nvim/plugins/oil.lua;
+                    config = toLuaFile ./nvim/plugins/oil.lua;
                 }
 
                 # Treesitter
@@ -163,16 +173,22 @@ in
                         p.tree-sitter-rust
                         p.tree-sitter-bash
                     ]));
-                    config = toLuaFile ../../modules/home-manager/nvim/plugins/treesitter.lua;
+                    config = toLuaFile ./nvim/plugins/treesitter.lua;
+                }
+
+                # LSP
+                {
+                    plugin = nvim-lspconfig;
+                        config = toLuaFile ./nvim/plugins/lspconfig.lua;
                 }
 
                 vim-nix
-            ];
+             ];
 
-            extraLuaConfig = ''
-                ${builtins.readFile ../../modules/home-manager/nvim/core/options.lua}
-                ${builtins.readFile ../../modules/home-manager/nvim/core/keymaps.lua}
-            '';
+             extraLuaConfig = ''
+                 ${builtins.readFile ./nvim/core/options.lua}
+                 ${builtins.readFile ./nvim/core/keymaps.lua}
+             '';
         };
 
 
