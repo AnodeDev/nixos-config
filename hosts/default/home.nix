@@ -132,8 +132,10 @@ in
             vimdiffAlias = true;
 
             extraPackages = with pkgs; [
+                # LSP servers
                 lua-language-server
-                rnix-lsp
+                nil
+                rust-analyzer
 
                 xclip
             ];
