@@ -1,6 +1,4 @@
 local oil = require("oil")
-local map = vim.keymap
-local opts = { noremap = true, silent = true }
 
 oil.setup({
     -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
@@ -183,6 +181,3 @@ oil.setup({
         border = "rounded",
     },
 })
-
-opts.desc = "Open file browser (oil)"
-map.set("n", "<leader>fb", "<CMD>Oil<CR>", opts)
