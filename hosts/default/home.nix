@@ -131,6 +131,11 @@ in
             vimAlias = true;
             vimdiffAlias = true;
 
+             extraLuaConfig = ''
+                 ${builtins.readFile ./nvim/core/options.lua}
+                 ${builtins.readFile ./nvim/core/keymaps.lua}
+             '';
+
             extraPackages = with pkgs; [
                 # LSP servers
                 lua-language-server
@@ -159,7 +164,6 @@ in
                     plugin = lualine-nvim;
                     config = toLuaFile ./nvim/plugins/lualine.lua;
                 }
-                nvim-web-devicons
 
                 # Oil
                 {
@@ -181,16 +185,21 @@ in
                 # LSP
                 {
                     plugin = nvim-lspconfig;
-                        config = toLuaFile ./nvim/plugins/lspconfig.lua;
+                    config = toLuaFile ./nvim/plugins/lspconfig.lua;
                 }
+
+                # Harpoon
+                {
+                    plugin = harpoon2;
+                    config = toLuaFile ./nvim/plugins/harpoon.lua;
+                }
+
+                # Extensions
+                nvim-web-devicons
+                plenary-nvim
 
                 vim-nix
              ];
-
-             extraLuaConfig = ''
-                 ${builtins.readFile ./nvim/core/options.lua}
-                 ${builtins.readFile ./nvim/core/keymaps.lua}
-             '';
         };
 
 
