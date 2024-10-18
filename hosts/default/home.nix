@@ -141,6 +141,7 @@ in
                 lua-language-server
                 nil
                 rust-analyzer
+                gopls
 
                 xclip
             ];
