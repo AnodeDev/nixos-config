@@ -43,6 +43,7 @@ in
         pkgs.offlineimap
         pkgs.w3m
         pkgs.mailcap
+        pkgs.qmk
         dmenu
 
         # Misc
