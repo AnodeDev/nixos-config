@@ -54,6 +54,7 @@ in
     pkgs.libreoffice
     pkgs.flameshot
     pkgs.direnv
+    pkgs.sayonara
 
     # Theming
     pkgs.bibata-cursors
