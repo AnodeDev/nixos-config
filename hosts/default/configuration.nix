@@ -1,16 +1,16 @@
 { config, lib, inputs, pkgs, ... }:
 {
     nixpkgs.config.allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
-            "steam"
-            "steam-original"
-            "steam-run"
-        ];
+      builtins.elem (lib.getName pkg) [
+        "steam"
+        "steam-original"
+        "steam-run"
+      ];
 
     imports =
     [
-        inputs.home-manager.nixosModules.default
-        ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
+      ./hardware-configuration.nix
     ];
 
     # =============== SYSTEM SETTINGS =============== #
@@ -36,16 +36,16 @@
     # TTY settings
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
-        font = "Lat2-Terminus16";
-        useXkbConfig = true;
+      font = "Lat2-Terminus16";
+      useXkbConfig = true;
     };
 
     # Audio
     services.pipewire = {
-        enable = true;
-        audio.enable = true;
-        pulse.enable = true;
-        jack.enable = true;
+      enable = true;
+      audio.enable = true;
+      pulse.enable = true;
+      jack.enable = true;
     };
 
     # dconf
@@ -58,24 +58,24 @@
    
     # System-wide packages
     environment.systemPackages = with pkgs; [
-        polybar
-        feh
-        kitty
-        git
-        yazi
-        pwvucontrol
-        catppuccin-sddm-corners
-        wget
-        unzip
-        xbanish
+      polybar
+      feh
+      kitty
+      git
+      yazi
+      pwvucontrol
+      catppuccin-sddm-corners
+      wget
+      unzip
+      xbanish
     ];
 
     # Home manager
     home-manager = {
-        extraSpecialArgs = { inherit inputs; };
-        users = {
-            "dexter" = import ./home.nix;
-        };
+      extraSpecialArgs = { inherit inputs; };
+      users = {
+        "dexter" = import ./home.nix;
+      };
     };
 
     # Set main user
@@ -97,20 +97,19 @@
     programs.steam.enable = true;
 
     services.udev = {
-        enable = true;
-        packages = with pkgs; [
-            xpad
-            xboxdrv
-        ];
+      enable = true;
+      packages = with pkgs; [
+        xpad
+        xboxdrv
+      ];
     };
 
     systemd.services.xboxdrv = {
-        description = "Xbox Controller Daemon";
-        after = [ "network.target" ];
-        serviceConfig = {
-            ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --mimic-xpad --deadzone 4000";
-            Restart = "always";
-        };
+      description = "Xbox Controller Daemon";
+      after = [ "network.target" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --mimic-xpad --deadzone 4000";
+        Restart = "always";
+      };
     };
 }
-
