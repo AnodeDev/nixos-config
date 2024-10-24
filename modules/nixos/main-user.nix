@@ -1,28 +1,35 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
-    cfg = config.main-user;
+  cfg = config.main-user;
 in
 {
-    options.main-user = {
-        enable
-            = lib.mkEnableOption "enable user module";
-        userName = lib.mkOption {
-            default = "mainuser";
-            description = ''
-                username
-            '';
-        };
+  options.main-user = {
+    enable = lib.mkEnableOption "enable user module";
+    userName = lib.mkOption {
+      default = "mainuser";
+      description = ''
+        username
+      '';
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    users.users.${cfg.userName} = {
+      isNormalUser = true;
+      description = "main user";
+      extraGroups = [
+        "wheel"
+        "networkManager"
+      ];
+      shell = pkgs.zsh;
     };
 
-    config = lib.mkIf cfg.enable {
-        users.users.${cfg.userName} = {
-            isNormalUser = true;
-            description = "main user";
-            extraGroups = [ "wheel" "networkManager" ];
-            shell = pkgs.zsh;
-        };
-
-        programs.zsh.enable = true;
-    };
+    programs.zsh.enable = true;
+  };
 }

@@ -1,23 +1,27 @@
-{ config, pkgs, lib, ... }:
-let dmenu = pkgs.dmenu.override(
 {
-  patches = [
-    ./dmenu-patches/dmenu-center-20240616-36c3d68.diff
-    ./dmenu-patches/dmenu-linesbelowprompt-and-fullwidth-20211014.diff
-  ];
-});
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+let
+  dmenu = pkgs.dmenu.override {
+    patches = [
+      ./dmenu-patches/dmenu-center-20240616-36c3d68.diff
+      ./dmenu-patches/dmenu-linesbelowprompt-and-fullwidth-20211014.diff
+    ];
+  };
 in
 {
-  imports = [
-      ../../modules/home-manager/variables.nix
-  ];
+  imports = [ ../../modules/home-manager/variables.nix ];
 
   # =============== GENERAL =============== #
 
   home.username = "dexter";
   home.homeDirectory = "/home/dexter";
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-original"
@@ -63,7 +67,12 @@ in
     xbanish
 
     # Fonts
-    (nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "Iosevka"
+        "0xProto"
+      ];
+    })
     times-newer-roman
   ];
 
@@ -77,24 +86,22 @@ in
   };
 
   home.file = {
-    "${config.xdg.dataHome}/icons/default".source =
-      "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
+    "${config.xdg.dataHome}/icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
   };
 
   # =============== HOME DIRECTORY =============== #
 
-  home.activation.cleanup =
-    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      rm -rf ~/.gnupg
-      rm -f ~/.gtkrc-2.0
-      rm -rf ~/.icons
-      rm -rf ~/.compose-cache
-      rm -rf ~/.nix-defexpr
-      rm -rf ~/.nix-profile
-      rm -rf ~/.w3m
-      rm -rf ~/.wine
-      rm -f ~/.zcompdump
-    '';
+  home.activation.cleanup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    rm -rf ~/.gnupg
+    rm -f ~/.gtkrc-2.0
+    rm -rf ~/.icons
+    rm -rf ~/.compose-cache
+    rm -rf ~/.nix-defexpr
+    rm -rf ~/.nix-profile
+    rm -rf ~/.w3m
+    rm -rf ~/.wine
+    rm -f ~/.zcompdump
+  '';
 
   # =============== CONFIGS =============== #
 
@@ -104,14 +111,17 @@ in
       userName = "Dexter Hedman";
       userEmail = "dexterhedman05@proton.me";
 
-      ignores = [ "*~" "*.swp" ];
+      ignores = [
+        "*~"
+        "*.swp"
+      ];
       extraConfig = {
         init.defaultBranch = "main";
         pull.rebase = false;
       };
     };
 
-      neovim = 
+    neovim =
       let
         toLua = str: "lua << EOF\n${str}\nEOF\n";
         toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
@@ -124,10 +134,10 @@ in
         vimAlias = true;
         vimdiffAlias = true;
 
-         extraLuaConfig = ''
-           ${builtins.readFile ./nvim/core/options.lua}
-           ${builtins.readFile ./nvim/core/keymaps.lua}
-         '';
+        extraLuaConfig = ''
+          ${builtins.readFile ./nvim/core/options.lua}
+          ${builtins.readFile ./nvim/core/keymaps.lua}
+        '';
 
         extraPackages = with pkgs; [
           # LSP servers
@@ -146,7 +156,7 @@ in
             plugin = catppuccin-nvim;
             config = toLuaFile ./nvim/plugins/catppuccin.lua;
           }
-          
+
           # Telescope
           {
             plugin = telescope-nvim;
@@ -168,12 +178,14 @@ in
 
           # Treesitter
           {
-            plugin = (nvim-treesitter.withPlugins (p: [
-              p.tree-sitter-nix
-              p.tree-sitter-lua
-              p.tree-sitter-rust
-              p.tree-sitter-bash
-            ]));
+            plugin = (
+              nvim-treesitter.withPlugins (p: [
+                p.tree-sitter-nix
+                p.tree-sitter-lua
+                p.tree-sitter-rust
+                p.tree-sitter-bash
+              ])
+            );
             config = toLuaFile ./nvim/plugins/treesitter.lua;
           }
 
@@ -194,13 +206,12 @@ in
           plenary-nvim
 
           vim-nix
-         ];
+        ];
       };
 
-
-      bat.enable = true;
-      zoxide.enable = true;
-      fzf.enable = true;
+    bat.enable = true;
+    zoxide.enable = true;
+    fzf.enable = true;
   };
 
   # =============== GTK =============== #

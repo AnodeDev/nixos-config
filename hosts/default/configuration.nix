@@ -1,14 +1,19 @@
-{ lib, inputs, pkgs, ... }:
 {
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
+{
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-original"
       "steam-run"
     ];
 
-  imports =
-  [
+  imports = [
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
   ];
@@ -22,7 +27,7 @@
   # Hostname
   networking.hostName = "dexter";
   networking.networkmanager.enable = true;
- 
+
   # Dbus
   services.dbus.enable = true;
   services.seatd.enable = true;
@@ -31,8 +36,11 @@
   time.timeZone = "Europe/Stockholm";
 
   # Experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
- 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # TTY settings
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
@@ -55,7 +63,7 @@
   services.openssh.enable = true;
 
   services.xbanish.enable = true;
- 
+
   # System-wide packages
   environment.systemPackages = with pkgs; [
     polybar
@@ -73,7 +81,9 @@
 
   # Home manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users = {
       "dexter" = import ./home.nix;
     };
@@ -82,7 +92,7 @@
   # Set main user
   main-user.enable = true;
   main-user.userName = "dexter";
- 
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
