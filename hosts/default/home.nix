@@ -24,47 +24,47 @@ in
       "steam-run"
     ];
 
-  home.packages = [
+  home.packages = with pkgs; [
     # PACKAGES
 
     # Useful
-    pkgs.brave
-    pkgs.btop
-    pkgs.tree
-    pkgs.ripgrep
-    pkgs.xdg-ninja
-    pkgs.gnupg
-    pkgs.pinentry
-    pkgs.pass
-    pkgs.protonmail-bridge
-    pkgs.neomutt
-    pkgs.offlineimap
-    pkgs.w3m
-    pkgs.mailcap
-    pkgs.qmk
+    brave
+    btop
+    tree
+    ripgrep
+    xdg-ninja
+    gnupg
+    pinentry
+    pass
+    protonmail-bridge
+    neomutt
+    offlineimap
+    w3m
+    mailcap
+    qmk
     dmenu
 
     # Misc
-    pkgs.freetube
-    pkgs.steam
-    pkgs.vesktop
-    pkgs.oh-my-posh
-    pkgs.fzf
-    pkgs.mupdf
-    pkgs.libreoffice
-    pkgs.flameshot
-    pkgs.direnv
-    pkgs.sayonara
+    freetube
+    steam
+    vesktop
+    oh-my-posh
+    fzf
+    mupdf
+    libreoffice
+    flameshot
+    direnv
+    sayonara
 
     # Theming
-    pkgs.bibata-cursors
-    pkgs.sweet
-    pkgs.candy-icons
-    pkgs.xbanish
+    bibata-cursors
+    sweet
+    candy-icons
+    xbanish
 
     # Fonts
-    (pkgs.nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
-    pkgs.times-newer-roman
+    (nerdfonts.override { fonts = [ "Iosevka" "0xProto" ]; })
+    times-newer-roman
   ];
 
   variables = {
