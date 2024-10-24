@@ -132,7 +132,7 @@ in
         extraPackages = with pkgs; [
           # LSP servers
           lua-language-server
-          nil
+          nixd
           rust-analyzer
           gopls
           clang-tools

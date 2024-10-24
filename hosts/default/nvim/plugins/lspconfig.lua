@@ -64,7 +64,7 @@ require("lspconfig").lua_ls.setup({
     },
 })
 
-require("lspconfig").nil_ls.setup({
+require("lspconfig").nixd.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
