@@ -60,8 +60,6 @@
   };
 
   # Audio
-  sound.enable = true;
-
   hardware.pulseaudio = {
     enable = true;
     # Change default-sample-rate to 192000 for higher res
