@@ -67,6 +67,17 @@ require("lspconfig").lua_ls.setup({
 require("lspconfig").nixd.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    cmd = { "nixd" },
+    settings = {
+        nixd = {
+            nixpkgs = {
+                expr = "import <nixpkgs> { }",
+            },
+            formatting = {
+                command = { "nixfmt" },
+            },
+        },
+    },
 })
 
 require("lspconfig").rust_analyzer.setup({
