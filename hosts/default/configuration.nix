@@ -23,16 +23,25 @@
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    kernelParams = [ "threadirqs" ];
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   # Hostname
-  networking.hostName = "dexter";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "dexter";
+    networkmanager.enable = true;
+  };
 
   # Dbus
-  services.dbus.enable = true;
-  services.seatd.enable = true;
+  services = {
+    dbus.enable = true;
+    seatd.enable = true;
+  };
 
   # Timezone
   time.timeZone = "Europe/Stockholm";
@@ -51,11 +60,27 @@
   };
 
   # Audio
+  sound.enable = true;
+
+  hardware.pulseaudio = {
+    enable = true;
+    # Change default-sample-rate to 192000 for higher res
+    # Change resample-method to soxr-vhq for better resampling
+    extraConfig = ''
+      default-sample-format = float32le
+      default-sample-rate = 96000
+      alternate-sample-rate = 44100
+      resample-method = speex-float-10
+      default-fragments = 8
+      default-fragment-size-msec = 5
+      avoid-resampling = true;
+    '';
+  };
+
   services.pipewire = {
     enable = true;
-    audio.enable = true;
     pulse.enable = true;
-    jack.enable = true;
+    alsa.enable = true;
   };
 
   # dconf
