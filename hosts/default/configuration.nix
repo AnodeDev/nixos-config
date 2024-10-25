@@ -62,6 +62,7 @@
   # Audio
   hardware.pulseaudio = {
     enable = true;
+    package = pkgs.pulseaudioFull;
     # Change default-sample-rate to 192000 for higher res
     # Change resample-method to soxr-vhq for better resampling
     extraConfig = ''
@@ -90,12 +91,15 @@
     kitty
     git
     yazi
-    pwvucontrol
+    pavucontrol
     catppuccin-sddm-corners
     wget
     unzip
     xbanish
     nixfmt-rfc-style
+    libsndfile
+    alsa-lib
+    alsa-lib.dev
   ];
 
   # Home manager
