@@ -34,7 +34,6 @@
 
       (lib.mkIf config.variables.languages {
         CARGO_HOME = lib.mkForce "${config.xdg.configHome}/languages/cargo";
-        RUSTUP_HOME = lib.mkForce "${config.xdg.configHome}/languages/rustup";
         GOPATH = lib.mkForce "${config.xdg.configHome}/languages/go";
       })
       (lib.mkIf config.variables.nvim { EDITOR = "nvim"; })
