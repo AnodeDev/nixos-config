@@ -86,6 +86,10 @@ require("lspconfig").rust_analyzer.setup({
             diagnostics = {
                 enable = true,
             },
+            cargo = {
+                allFeatures = true,
+                allTargets = false,
+            },
         },
     },
     on_attach = on_attach,

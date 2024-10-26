@@ -195,12 +195,6 @@ in
             config = toLuaFile ./nvim/plugins/lspconfig.lua;
           }
 
-          # Harpoon
-          {
-            plugin = harpoon2;
-            config = toLuaFile ./nvim/plugins/harpoon.lua;
-          }
-
           # Extensions
           nvim-web-devicons
           plenary-nvim
