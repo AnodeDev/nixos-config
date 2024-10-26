@@ -71,6 +71,7 @@ in
       fonts = [
         "Iosevka"
         "0xProto"
+        "JetBrainsMono"
       ];
     })
     times-newer-roman
