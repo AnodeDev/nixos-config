@@ -87,6 +87,7 @@
   # System-wide packages
   environment.systemPackages = with pkgs; [
     polybar
+    picom
     feh
     kitty
     git
@@ -111,6 +112,13 @@
       "dexter" = import ./home.nix;
     };
   };
+
+  # Setup Emacs
+  services.emacs = {
+    enable = true;
+    startWithGraphical = true;
+  };
+
 
   # Set main user
   main-user.enable = true;

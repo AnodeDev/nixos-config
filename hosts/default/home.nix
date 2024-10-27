@@ -46,7 +46,9 @@ in
     w3m
     mailcap
     qmk
-    dmenu
+    psmisc
+    rofi
+    # dmenu
 
     # Misc
     freetube
@@ -153,9 +155,13 @@ in
 
         plugins = with pkgs.vimPlugins; [
           # Theme
+          # {
+          #   plugin = catppuccin-nvim;
+          #   config = toLuaFile ./nvim/plugins/catppuccin.lua;
+          # }
           {
-            plugin = catppuccin-nvim;
-            config = toLuaFile ./nvim/plugins/catppuccin.lua;
+            plugin = nord-nvim;
+            config = toLua "vim.cmd[[ colorscheme nord ]]";
           }
 
           # Telescope

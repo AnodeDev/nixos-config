@@ -16,7 +16,7 @@
       after = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];
       serviceConfig = {
-        ExecStart = "${pkgs.picom}/bin/picom --config /home/dexter/.config/WindowManagement/picom/picom.conf --backend glx";
+        ExecStart = "${pkgs.picom}/bin/picom --config /home/dexter/.config/WindowManagement/picom/picom.conf";
         Restart = "always";
         RestartSec = "1s";
       };
