@@ -161,7 +161,7 @@ in
           # }
           {
             plugin = nord-nvim;
-            config = toLua "vim.cmd[[ colorscheme nord ]]";
+            config = toLuaFile ./nvim/plugins/nord.lua;
           }
 
           # Telescope
