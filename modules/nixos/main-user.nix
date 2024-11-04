@@ -26,6 +26,7 @@ in
       extraGroups = [
         "wheel"
         "networkManager"
+        "plugdev"
       ];
       shell = pkgs.zsh;
     };

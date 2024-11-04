@@ -143,8 +143,12 @@
     packages = with pkgs; [
       xpad
       xboxdrv
-      qmk
+      qmk-udev-rules
     ];
+    #    extraRules = ''
+    #      # Elite-C udev rule
+    #      SUBSYSTEM=="usb", ATTR{idVendor}=="03eb", ATTR{idProduct}=="2ff4", TAG+="uaccess"
+    #    '';
   };
 
   systemd.services.xboxdrv = {

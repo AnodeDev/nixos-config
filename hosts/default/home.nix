@@ -61,6 +61,8 @@ in
     flameshot
     direnv
     sayonara
+    pciutils
+    usbutils
 
     # Theming
     bibata-cursors
