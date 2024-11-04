@@ -143,6 +143,7 @@
     packages = with pkgs; [
       xpad
       xboxdrv
+      qmk
     ];
   };
 
