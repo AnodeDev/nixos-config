@@ -12,7 +12,7 @@
   config = lib.mkIf config.xserver.enable {
     services.xserver = {
       enable = true;
-      xkb.layout = "se";
+      xkb.layout = "us";
       xkb.options = "eurosign:e";
     };
   };
