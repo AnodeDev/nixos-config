@@ -14,6 +14,7 @@
       enable = true;
       xkb.layout = "us";
       xkb.options = "eurosign:e";
+      videoDrivers = [ "amdgpu" ];
     };
   };
 }

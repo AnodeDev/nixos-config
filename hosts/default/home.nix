@@ -23,9 +23,10 @@ in
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "steam-unwrapped"
       "steam"
-      "steam-original"
       "steam-run"
+      "steam-original"
     ];
 
   home.packages = with pkgs; [
@@ -52,7 +53,6 @@ in
 
     # Misc
     freetube
-    steam
     vesktop
     oh-my-posh
     fzf

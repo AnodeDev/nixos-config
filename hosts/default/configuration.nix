@@ -8,9 +8,10 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "steam-unwrapped"
       "steam"
-      "steam-original"
       "steam-run"
+      "steam-original"
     ];
 
   imports = [
@@ -93,7 +94,7 @@
     feh
     kitty
     git
-    yazi
+    # yazi
     pavucontrol
     catppuccin-sddm-corners
     wget
@@ -138,7 +139,9 @@
   system.stateVersion = "24.05";
 
   # =============== GAMING =============== #
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+  };
 
   services.udev = {
     enable = true;
@@ -147,10 +150,6 @@
       xboxdrv
       qmk-udev-rules
     ];
-    #    extraRules = ''
-    #      # Elite-C udev rule
-    #      SUBSYSTEM=="usb", ATTR{idVendor}=="03eb", ATTR{idProduct}=="2ff4", TAG+="uaccess"
-    #    '';
   };
 
   systemd.services.xboxdrv = {
