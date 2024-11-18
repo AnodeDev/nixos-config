@@ -157,14 +157,14 @@ in
 
         plugins = with pkgs.vimPlugins; [
           # Theme
-          # {
-          #   plugin = catppuccin-nvim;
-          #   config = toLuaFile ./nvim/plugins/catppuccin.lua;
-          # }
           {
-            plugin = nord-nvim;
-            config = toLuaFile ./nvim/plugins/nord.lua;
+            plugin = catppuccin-nvim;
+            config = toLuaFile ./nvim/plugins/catppuccin.lua;
           }
+          # {
+          #   plugin = nord-nvim;
+          #   config = toLuaFile ./nvim/plugins/nord.lua;
+          # }
 
           # Telescope
           {
