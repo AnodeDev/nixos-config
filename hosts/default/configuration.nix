@@ -94,7 +94,6 @@
     feh
     kitty
     git
-    # yazi
     pavucontrol
     catppuccin-sddm-corners
     wget
