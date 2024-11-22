@@ -70,6 +70,7 @@
       ];
     })
     times-newer-roman
+    maple-mono-NF
   ];
 
   variables = {
