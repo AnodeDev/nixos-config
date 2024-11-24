@@ -134,6 +134,8 @@
     enableSSHSupport = true;
   };
 
+  services.libinput.mouse.middleEmulation = false;
+
   # DO NOT TOUCH!!!!!
   system.stateVersion = "24.05";
 
