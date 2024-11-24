@@ -11,6 +11,7 @@
     languages = lib.mkEnableOption "set programming language paths to .config";
     nvim = lib.mkEnableOption "set neovim as EDITOR";
     kitty = lib.mkEnableOption "set kitty as TERM";
+    eww = lib.mkEnableOption "set eww config directory";
   };
 
   config = lib.mkIf config.variables.enable {
@@ -38,6 +39,7 @@
       })
       (lib.mkIf config.variables.nvim { EDITOR = "nvim"; })
       (lib.mkIf config.variables.kitty { TERM = "kitty-direct"; })
+      (lib.mkIf config.variables.eww { EWW_CONFIG_DIR = "${config.xdg.configHome}/WindowManagement/eww"; })
     ];
   };
 }

@@ -80,6 +80,7 @@
     languages = true;
     nvim = true;
     kitty = true;
+    eww = true;
   };
 
   home.file = {

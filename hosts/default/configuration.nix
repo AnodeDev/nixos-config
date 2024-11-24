@@ -90,6 +90,7 @@
   # System-wide packages
   environment.systemPackages = with pkgs; [
     polybar
+    eww
     picom
     feh
     kitty
