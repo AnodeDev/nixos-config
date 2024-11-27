@@ -12,17 +12,14 @@
 
   config = lib.mkIf config.picom.enable {
     systemd.user.services.picom = {
-      description = "Picom compositor service";
+      enable = true;
       after = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];
       serviceConfig = {
-        ExecStart = "${pkgs.picom}/bin/picom --config /home/dexter/.config/WindowManagement/picom/picom.conf";
+        ExecStart = lib.mkDefault "${pkgs.picom-pijulius}/bin/picom --config /home/dexter/.config/WindowManagement/picom/picom.conf";
         Restart = "always";
-        RestartSec = "1s";
       };
       wantedBy = [ "default.target" ];
     };
-
-    systemd.user.services.picom.enable = true;
   };
 }

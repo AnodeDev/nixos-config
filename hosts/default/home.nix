@@ -12,15 +12,6 @@
   home.username = "dexter";
   home.homeDirectory = "/home/dexter";
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "steam-unwrapped"
-      "steam"
-      "steam-run"
-      "steam-original"
-    ];
-
   home.packages = with pkgs; [
     # PACKAGES
 
@@ -189,6 +180,11 @@
               ])
             );
             config = toLuaFile ./nvim/plugins/treesitter.lua;
+          }
+
+          # yuck
+          {
+            plugin = yuck-vim;
           }
 
           # LSP

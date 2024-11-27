@@ -1,19 +1,9 @@
 {
-  lib,
   inputs,
   pkgs,
   ...
 }:
 {
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "steam-unwrapped"
-      "steam"
-      "steam-run"
-      "steam-original"
-    ];
-
   imports = [
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
@@ -91,7 +81,8 @@
   environment.systemPackages = with pkgs; [
     polybar
     eww
-    picom
+    picom-pijulius
+    jq
     feh
     kitty
     git
@@ -102,8 +93,17 @@
     xbanish
     nixfmt-rfc-style
     libsndfile
-    alsa-lib
-    alsa-lib.dev
+    xdotool
+
+    # Programming
+    (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
+      extensions = [ "rust-src" "llvm-tools-preview" ];
+      targets = [ "thumbv7em-none-eabihf" ];
+    }))
+    go
+    pkg-config
+    openssl
+    gcc
   ];
 
   # Home manager
