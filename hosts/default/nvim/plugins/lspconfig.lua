@@ -81,6 +81,9 @@ require("lspconfig").nixd.setup({
 })
 
 require("lspconfig").rust_analyzer.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+        cmd = { "rust-analyzer" },
     settings = {
         ["rust-analyzer"] = {
             diagnostics = {
@@ -92,8 +95,6 @@ require("lspconfig").rust_analyzer.setup({
             },
         },
     },
-    on_attach = on_attach,
-    capabilities = capabilities,
 })
 
 require("lspconfig").gopls.setup({

@@ -203,7 +203,10 @@
 
     bat.enable = true;
     zoxide.enable = true;
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 
   # =============== GTK =============== #
