@@ -32,6 +32,7 @@
     qmk
     psmisc
     rofi
+    yazi
 
     # Misc
     freetube
