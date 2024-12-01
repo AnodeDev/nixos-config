@@ -101,6 +101,9 @@
       targets = [ "thumbv7em-none-eabihf" ];
     }))
     go
+    zig
+
+    # Necessary packages
     pkg-config
     openssl
     gcc

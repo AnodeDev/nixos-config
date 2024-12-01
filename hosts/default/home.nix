@@ -36,6 +36,7 @@
 
     # Misc
     freetube
+    wtwitch
     vesktop
     oh-my-posh
     fzf
@@ -54,13 +55,7 @@
     xbanish
 
     # Fonts
-    (nerdfonts.override {
-      fonts = [
-        "Iosevka"
-        "0xProto"
-        "JetBrainsMono"
-      ];
-    })
+    nerd-fonts.jetbrains-mono
     times-newer-roman
     maple-mono-NF
   ];
