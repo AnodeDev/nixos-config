@@ -48,12 +48,12 @@
     sayonara
     pciutils
     usbutils
+    xbanish
 
     # Theming
-    bibata-cursors
+    catppuccin-cursors.frappeLight
     sweet
     candy-icons
-    xbanish
 
     # Fonts
     nerd-fonts.jetbrains-mono
@@ -69,10 +69,6 @@
     nvim = true;
     kitty = true;
     eww = true;
-  };
-
-  home.file = {
-    "${config.xdg.dataHome}/icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
   };
 
   # =============== HOME DIRECTORY =============== #
@@ -187,10 +183,10 @@
           }
 
           # LSP
-          {
-            plugin = nvim-lspconfig;
-            config = toLuaFile ./nvim/plugins/lspconfig.lua;
-          }
+          # {
+          #   plugin = nvim-lspconfig;
+          #   config = toLuaFile ./nvim/plugins/lspconfig.lua;
+          # }
 
           # Extensions
           nvim-web-devicons
@@ -210,16 +206,26 @@
 
   # =============== GTK =============== #
 
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.candy-icons;
+      name = "candy-icons";
+    };
+    cursorTheme = {
+      package = pkgs.catppuccin-cursors.frappeLight;
+      name = "catppuccin-frappe-light-cursors";
+    };
+    cursorTheme.size = 25;
+  };
 
-  gtk.cursorTheme.package = pkgs.bibata-cursors;
-  gtk.cursorTheme.name = "Bibata-Modern-Ice";
-
-  gtk.theme.package = pkgs.nordic;
-  gtk.theme.name = "Nordic";
-
-  gtk.iconTheme.package = pkgs.candy-icons;
-  gtk.iconTheme.name = "candy-icons";
+  home.pointerCursor = {
+    x11.enable = true;
+    gtk.enable = true;
+    package = pkgs.catppuccin-cursors.frappeLight;
+    name = "catppuccin-frappe-light-cursors";
+    size = 25;
+  };
 
   # =============== QT =============== #
 
