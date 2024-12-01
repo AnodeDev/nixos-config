@@ -37,6 +37,7 @@
     # Misc
     freetube
     wtwitch
+    mpv
     vesktop
     oh-my-posh
     fzf
@@ -131,6 +132,7 @@
           rust-analyzer
           gopls
           clang-tools
+          zls
 
           xclip
         ];
@@ -173,6 +175,7 @@
                 p.tree-sitter-lua
                 p.tree-sitter-rust
                 p.tree-sitter-bash
+                p.tree-sitter-zig
               ])
             );
             config = toLuaFile ./nvim/plugins/treesitter.lua;
