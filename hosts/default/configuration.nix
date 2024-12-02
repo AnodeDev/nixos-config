@@ -107,6 +107,9 @@
     pkg-config
     openssl
     gcc
+    nasm
+    gdb
+    gnumake
   ];
 
   # Home manager
