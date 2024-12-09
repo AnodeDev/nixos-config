@@ -79,6 +79,7 @@
 
   # System-wide packages
   environment.systemPackages = with pkgs; [
+    neovim-unwrapped
     polybar
     eww
     picom-pijulius

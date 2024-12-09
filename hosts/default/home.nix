@@ -17,6 +17,7 @@
 
     # Useful
     brave
+    nyxt
     btop
     tree
     ripgrep
@@ -49,6 +50,7 @@
     pciutils
     usbutils
     xbanish
+    xclip
 
     # Theming
     catppuccin-cursors.frappeLight
@@ -102,99 +104,6 @@
         pull.rebase = false;
       };
     };
-
-    neovim =
-      let
-        toLua = str: "lua << EOF\n${str}\nEOF\n";
-        toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-      in
-      {
-        enable = true;
-        defaultEditor = true;
-
-        viAlias = true;
-        vimAlias = true;
-        vimdiffAlias = true;
-
-        extraLuaConfig = ''
-          ${builtins.readFile ./nvim/core/options.lua}
-          ${builtins.readFile ./nvim/core/keymaps.lua}
-        '';
-
-        extraPackages = with pkgs; [
-          # LSP servers
-          lua-language-server
-          nixd
-          rust-analyzer
-          gopls
-          clang-tools
-          zls
-
-          xclip
-        ];
-
-        plugins = with pkgs.vimPlugins; [
-          # Theme
-          {
-            plugin = catppuccin-nvim;
-            config = toLuaFile ./nvim/plugins/catppuccin.lua;
-          }
-          # {
-          #   plugin = nord-nvim;
-          #   config = toLuaFile ./nvim/plugins/nord.lua;
-          # }
-
-          # Telescope
-          {
-            plugin = telescope-nvim;
-            config = toLuaFile ./nvim/plugins/telescope.lua;
-          }
-          telescope-fzf-native-nvim
-
-          # Lualine
-          {
-            plugin = lualine-nvim;
-            config = toLuaFile ./nvim/plugins/lualine.lua;
-          }
-
-          # Oil
-          {
-            plugin = oil-nvim;
-            config = toLuaFile ./nvim/plugins/oil.lua;
-          }
-
-          # Treesitter
-          {
-            plugin = (
-              nvim-treesitter.withPlugins (p: [
-                p.tree-sitter-nix
-                p.tree-sitter-lua
-                p.tree-sitter-rust
-                p.tree-sitter-bash
-                p.tree-sitter-zig
-              ])
-            );
-            config = toLuaFile ./nvim/plugins/treesitter.lua;
-          }
-
-          # yuck
-          {
-            plugin = yuck-vim;
-          }
-
-          # LSP
-          # {
-          #   plugin = nvim-lspconfig;
-          #   config = toLuaFile ./nvim/plugins/lspconfig.lua;
-          # }
-
-          # Extensions
-          nvim-web-devicons
-          plenary-nvim
-
-          vim-nix
-        ];
-      };
 
     bat.enable = true;
     zoxide.enable = true;
