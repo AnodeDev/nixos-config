@@ -53,7 +53,7 @@
     xclip
 
     # Theming
-    catppuccin-cursors.frappeLight
+    catppuccin-cursors.mochaDark
     sweet
     candy-icons
 
@@ -126,8 +126,8 @@
       name = "candy-icons";
     };
     cursorTheme = {
-      package = pkgs.catppuccin-cursors.frappeLight;
-      name = "catppuccin-frappe-light-cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+      name = "catppuccin-mocha-dark-cursors";
     };
     cursorTheme.size = 25;
   };
@@ -135,8 +135,8 @@
   home.pointerCursor = {
     x11.enable = true;
     gtk.enable = true;
-    package = pkgs.catppuccin-cursors.frappeLight;
-    name = "catppuccin-frappe-light-cursors";
+    package = pkgs.catppuccin-cursors.mochaDark;
+    name = "catppuccin-mocha-dark-cursors";
     size = 25;
   };
 
