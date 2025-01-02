@@ -17,7 +17,6 @@
 
     # Useful
     brave
-    nyxt
     btop
     tree
     ripgrep
@@ -37,8 +36,6 @@
 
     # Misc
     freetube
-    wtwitch
-    mpv
     vesktop
     oh-my-posh
     fzf
@@ -51,6 +48,7 @@
     usbutils
     xbanish
     xclip
+    fastfetch
 
     # Theming
     catppuccin-cursors.mochaDark

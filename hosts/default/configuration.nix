@@ -156,17 +156,16 @@
     enable = true;
     packages = with pkgs; [
       xpad
-      xboxdrv
       qmk-udev-rules
     ];
   };
 
-  systemd.services.xboxdrv = {
-    description = "Xbox Controller Daemon";
-    after = [ "network.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --mimic-xpad --deadzone 4000";
-      Restart = "always";
-    };
-  };
+  # systemd.services.xboxdrv = {
+  #   description = "Xbox Controller Daemon";
+  #   after = [ "network.target" ];
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --mimic-xpad --deadzone 4000";
+  #     Restart = "always";
+  #   };
+  # };
 }
