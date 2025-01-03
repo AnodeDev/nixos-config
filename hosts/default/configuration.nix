@@ -53,7 +53,7 @@
   # Audio
   services.pipewire.enable = false;
 
-  hardware.pulseaudio = {
+  services.pulseaudio = {
     enable = true;
     package = pkgs.pulseaudioFull;
     # Change default-sample-rate to 192000 for higher res
