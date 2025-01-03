@@ -11,12 +11,13 @@
 
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    oxide.url = "path:/home/dexter/Personal/Programming/Nix/oxide";
+    oxide = {
+      url = "path:/home/dexter/Personal/Programming/Nix/oxide";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
