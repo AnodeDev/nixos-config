@@ -95,7 +95,7 @@
     nixfmt-rfc-style
     libsndfile
     xdotool
-    nix-prefetch-git
+    niv
 
     # Programming
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
