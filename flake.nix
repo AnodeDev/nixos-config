@@ -16,12 +16,7 @@
       };
     };
 
-    oxide = {
-      url = "path:/home/dexter/Personal/Programming/Nix/oxide";
-      inputs = {
-        nixkpgs.follows = "nixpkg";
-      };
-    };
+    oxide.url = "path:/home/dexter/Personal/Programming/Nix/oxide";
   };
 
   outputs =
@@ -52,17 +47,15 @@
           system = "x86_64-linux";
           overlays = [
             (import inputs.rust-overlay)
+            (final: prev: {
+              oxide = prev.callPackage inputs.oxide {};
+            })
           ];
         };
         modules = [
           ./hosts/default/configuration.nix
           ./modules/default.nix
           inputs.home-manager.nixosModules.home-manager
-          {
-            environment.systemPackages = [
-              oxide.packages.x86_64-linux.oxide
-            ];
-          }
         ];
       };
     };

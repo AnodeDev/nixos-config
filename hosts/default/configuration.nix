@@ -112,7 +112,6 @@
     gdb
     gnumake
 
-    # Custom packages
     oxide
   ];
 

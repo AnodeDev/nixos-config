@@ -36,10 +36,40 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1735685343,
+        "narHash": "sha256-h1CpBzdJDNtSUb5QMyfFHKHocTTky+4McgQEBQBM+xA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "81934660d6e9ea54d2f0cdee821e8533b10c221a",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "oxide": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1735864453,
+        "narHash": "sha256-AwmgS8gRa2vwn0sZRRanpgHCU+/5yYqkCkzrn0qePmg=",
+        "path": "/home/dexter/Personal/Programming/Nix/oxide",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/dexter/Personal/Programming/Nix/oxide",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "oxide": "oxide",
         "rust-overlay": "rust-overlay"
       }
     },
