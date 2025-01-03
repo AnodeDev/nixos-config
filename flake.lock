@@ -55,8 +55,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1735909652,
-        "narHash": "sha256-xyUCWW/cEqFg5pLwBz7CQr57+X9Hrszc357UcrWHZ2k=",
+        "lastModified": 1735910310,
+        "narHash": "sha256-omBlH01eL8XWa5/AeJfjZe7sT7uqL5QbKhKWLx7VqU8=",
         "path": "/home/dexter/Personal/Programming/Nix/oxide",
         "type": "path"
       },
