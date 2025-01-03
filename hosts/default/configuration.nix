@@ -95,6 +95,7 @@
     nixfmt-rfc-style
     libsndfile
     xdotool
+    nix-prefetch-git
 
     # Programming
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
@@ -112,6 +113,7 @@
     gdb
     gnumake
 
+    # Custom packages
     oxide
   ];
 
