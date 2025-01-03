@@ -85,7 +85,7 @@
     picom-pijulius
     jq
     feh
-    kitty
+    alacritty
     git
     pavucontrol
     catppuccin-sddm-corners
