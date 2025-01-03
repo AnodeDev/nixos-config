@@ -111,6 +111,9 @@
     nasm
     gdb
     gnumake
+
+    # Custom packages
+    oxide
   ];
 
   # Home manager

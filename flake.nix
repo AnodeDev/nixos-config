@@ -15,6 +15,13 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    oxide = {
+      url = "path:/home/dexter/Personal/Programming/Nix/oxide";
+      inputs = {
+        nixkpgs.follows = "nixpkg";
+      };
+    };
   };
 
   outputs =
@@ -51,6 +58,11 @@
           ./hosts/default/configuration.nix
           ./modules/default.nix
           inputs.home-manager.nixosModules.home-manager
+          {
+            environment.systemPackages = [
+              oxide.packages.x86_64-linux.oxide
+            ];
+          }
         ];
       };
     };
