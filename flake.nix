@@ -13,11 +13,6 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    oxide = {
-      url = "path:/home/dexter/Personal/Programming/Nix/oxide";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -46,12 +41,7 @@
               ];
           };
           system = "x86_64-linux";
-          overlays = [
-            (import inputs.rust-overlay)
-            (final: prev: {
-              oxide = prev.callPackage inputs.oxide {};
-            })
-          ];
+          overlays = [ (import inputs.rust-overlay) ];
         };
         modules = [
           ./hosts/default/configuration.nix
