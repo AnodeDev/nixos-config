@@ -95,7 +95,6 @@
     nixfmt-rfc-style
     libsndfile
     xdotool
-    niv
 
     # Programming
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
@@ -114,7 +113,7 @@
     gnumake
 
     # Custom packages
-    oxide
+    # oxide
   ];
 
   # Home manager

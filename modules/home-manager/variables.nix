@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -10,7 +11,7 @@
     cleaning = lib.mkEnableOption "enable the home directory cleaning variables";
     languages = lib.mkEnableOption "set programming language paths to .config";
     nvim = lib.mkEnableOption "set neovim as EDITOR";
-    kitty = lib.mkEnableOption "set kitty as TERM";
+    alacritty = lib.mkEnableOption "set Alacritty as TERM";
     eww = lib.mkEnableOption "set eww config directory";
   };
 
@@ -38,7 +39,7 @@
         GOPATH = lib.mkForce "${config.xdg.configHome}/languages/go";
       })
       (lib.mkIf config.variables.nvim { EDITOR = "nvim"; })
-      (lib.mkIf config.variables.kitty { TERM = "kitty-direct"; })
+      (lib.mkIf config.variables.alacritty { TERM = "alacritty-direct"; })
       (lib.mkIf config.variables.eww { EWW_CONFIG_DIR = "${config.xdg.configHome}/WindowManagement/eww"; })
     ];
   };

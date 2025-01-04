@@ -67,7 +67,7 @@
     cleaning = true;
     languages = true;
     nvim = true;
-    kitty = true;
+    alacritty = true;
     eww = true;
   };
 
