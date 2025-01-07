@@ -88,7 +88,13 @@
     alacritty
     git
     pavucontrol
-    catppuccin-sddm-corners
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Maple Mono NF";
+      fontSize = "11";
+      background = "${./catppuccin.png}";
+      loginBackground = true;
+    })
     wget
     unzip
     xbanish

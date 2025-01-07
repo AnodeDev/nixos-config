@@ -13,7 +13,7 @@
   config = lib.mkIf config.sddm.enable {
     services.displayManager.sddm = {
       enable = true;
-      theme = "catppuccin-sddm-corners";
+      theme = "catppuccin-mocha";
       wayland.enable = if config.sddm.enableWayland then true else false;
     };
   };
