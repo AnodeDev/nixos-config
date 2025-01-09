@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -15,6 +16,7 @@
       enable = true;
       theme = "catppuccin-mocha";
       wayland.enable = if config.sddm.enableWayland then true else false;
+      package = pkgs.kdePackages.sddm;
     };
   };
 }
