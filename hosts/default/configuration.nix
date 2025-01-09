@@ -69,6 +69,16 @@
     '';
   };
 
+  # Journald
+  services.journald = {
+    extraConfig = ''
+      SystemMaxUse=500M
+      SystemKeepFree=50M
+      SystemMaxFileSize=100M
+      Compress=yes
+    '';
+  };
+
   # dconf
   programs.dconf.enable = true;
 
