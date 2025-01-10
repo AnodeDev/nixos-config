@@ -102,7 +102,7 @@
       flavor = "mocha";
       font = "Maple Mono NF";
       fontSize = "11";
-      background = "${./catppuccin.png}";
+      background = "${./spaceman.png}";
       loginBackground = true;
     })
     wget
