@@ -98,6 +98,8 @@
     alacritty
     git
     pavucontrol
+    alsa-lib
+    alsa-tools
     (catppuccin-sddm.override {
       flavor = "mocha";
       font = "Maple Mono NF";
