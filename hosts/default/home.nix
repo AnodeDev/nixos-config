@@ -126,8 +126,13 @@
     cursorTheme = {
       package = pkgs.catppuccin-cursors.mochaDark;
       name = "catppuccin-mocha-dark-cursors";
+      size = 25;
     };
-    cursorTheme.size = 25;
+
+    font = {
+      name = "Maple Mono NF";
+      package = pkgs.maple-mono-NF;
+    };
   };
 
   home.pointerCursor = {
@@ -140,7 +145,11 @@
 
   # =============== QT =============== #
 
-  qt.enable = true;
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk3";
+
+  };
 
   # =============== DON'T TOUCH! =============== #
 
