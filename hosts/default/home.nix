@@ -49,6 +49,7 @@
     xbanish
     xclip
     fastfetch
+    playerctl
 
     # Theming
     catppuccin-cursors.mochaDark
