@@ -113,6 +113,7 @@
     nixfmt-rfc-style
     libsndfile
     xdotool
+    sysstat
 
     # Programming
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {

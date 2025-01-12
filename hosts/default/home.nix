@@ -50,6 +50,7 @@
     xclip
     fastfetch
     playerctl
+    imagemagick
 
     # Theming
     catppuccin-cursors.mochaDark
