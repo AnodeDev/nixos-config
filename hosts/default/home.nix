@@ -55,7 +55,7 @@
     # Theming
     catppuccin-cursors.mochaDark
     sweet
-    candy-icons
+    zafiro-icons
 
     # Fonts
     nerd-fonts.jetbrains-mono
@@ -122,8 +122,8 @@
       name = "Nordic";
     };
     iconTheme = {
-      package = pkgs.candy-icons;
-      name = "candy-icons";
+      package = pkgs.zafiro-icons;
+      name = "zafiro-icons";
     };
     cursorTheme = {
       package = pkgs.catppuccin-cursors.mochaDark;
