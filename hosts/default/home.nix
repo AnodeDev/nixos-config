@@ -51,6 +51,7 @@
     fastfetch
     playerctl
     imagemagick
+    lutris-free
 
     # Theming
     catppuccin-cursors.mochaDark
