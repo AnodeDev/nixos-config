@@ -109,10 +109,10 @@
     })
     wget
     unzip
-    xbanish
+    # xbanish
     nixfmt-rfc-style
     libsndfile
-    xdotool
+    # xdotool
     sysstat
 
     # Programming
@@ -181,13 +181,4 @@
       qmk-udev-rules
     ];
   };
-
-  # systemd.services.xboxdrv = {
-  #   description = "Xbox Controller Daemon";
-  #   after = [ "network.target" ];
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --mimic-xpad --deadzone 4000";
-  #     Restart = "always";
-  #   };
-  # };
 }

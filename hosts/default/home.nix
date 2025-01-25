@@ -46,8 +46,7 @@
     sayonara
     pciutils
     usbutils
-    xbanish
-    xclip
+    # xclip
     fastfetch
     playerctl
     imagemagick
@@ -139,7 +138,7 @@
   };
 
   home.pointerCursor = {
-    x11.enable = true;
+    hyprcursor.enable = true;
     gtk.enable = true;
     package = pkgs.catppuccin-cursors.mochaDark;
     name = "catppuccin-mocha-dark-cursors";
