@@ -95,6 +95,7 @@
     picom-pijulius
     jq
     feh
+    hyprpaper
     alacritty
     git
     pavucontrol
