@@ -33,6 +33,7 @@
     psmisc
     rofi
     yazi
+    tofi
 
     # Misc
     freetube
