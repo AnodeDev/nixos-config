@@ -34,6 +34,7 @@
     rofi
     yazi
     tofi
+    socat
 
     # Misc
     freetube
