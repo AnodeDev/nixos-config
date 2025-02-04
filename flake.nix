@@ -94,6 +94,7 @@
         modules = [
           ./hosts/default/configuration.nix
           ./modules
+          ./system
           inputs.home-manager.nixosModules.home-manager
         ];
       };

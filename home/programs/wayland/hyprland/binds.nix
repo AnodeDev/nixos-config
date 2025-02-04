@@ -11,6 +11,8 @@ let
     ]
   )
   10);
+
+  runOnce = program: "pgrep ${program} || uwsm app -- ${program}";
 in {
   wayland.windowManager.hyprland.settings = {
     bindm = [
@@ -19,7 +21,7 @@ in {
     ];
 
     bind = [
-      "$mod, Return, exec, alacritty"
+      "$mod, Return, exec, uwsm app -- alacritty"
       "$mod, C, killactive"
 
       "$mod, F, fullscreen"

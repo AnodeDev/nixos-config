@@ -11,8 +11,8 @@
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
 
     settings = {
-      preload = ["${config.home.homeConfig}/Media/Wallpapers/hex-landscape.png"];
-      wallpaper = ["${config.home.homeConfig}/Media/Wallpapers/hex-landscape.png"];
+      preload = ["${config.home.homeDirectory}/Media/Wallpapers/hex-landscape.png"];
+      wallpaper = ["${config.home.homeDirectory}/Media/Wallpapers/hex-landscape.png"];
     };
   };
 
