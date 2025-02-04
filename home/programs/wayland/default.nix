@@ -7,6 +7,7 @@
   imports = [
     ./hyprland
     ./hyprlock.nix
+    ./uwsm.nix
   ];
 
   home.packages = with pkgs; [

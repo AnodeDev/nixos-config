@@ -13,15 +13,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    package = inputs.hyprland.packages.${pkgs.system}.default;
+    withUWSM = true;
 
-    systemd = {
-      enable = false;
-      variables = ["--all"];
-      extraCommands = [
-        "systemctl --user stop graphical-session.target"
-        "systemctl --user start hyprland-session.target"
-      ];
-    };
+    package = inputs.hyprland.packages.${pkgs.system}.default;
   };
 }
