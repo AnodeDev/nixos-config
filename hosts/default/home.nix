@@ -53,6 +53,8 @@
     playerctl
     imagemagick
     lutris-free
+    wl-clipboard
+    clipse
 
     # Theming
     catppuccin-cursors.mochaDark
