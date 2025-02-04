@@ -4,16 +4,11 @@
   imports = [
     ./nixos/bspwm.nix
     ./nixos/picom.nix
-    ./nixos/sddm.nix
     ./nixos/xserver.nix
     ./nixos/main-user.nix
-    ./nixos/hyprland.nix
   ];
 
   xserver.enable = lib.mkDefault true;
   bspwm.enable = lib.mkDefault true;
   picom.enable = lib.mkDefault true;
-  sddm.enable = lib.mkDefault true;
-  sddm.enableWayland = lib.mkDefault true;
-  hyprland.enable = lib.mkDefault true;
 }

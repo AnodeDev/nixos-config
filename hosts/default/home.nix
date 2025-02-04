@@ -5,7 +5,14 @@
   ...
 }:
 {
-  imports = [ ../../modules/home-manager/variables.nix ];
+  imports = [
+    ../../modules/home-manager/variables.nix
+    ../../home/programs/browsers/zen.nix
+
+    ../../home/programs/wayland
+    ../../home/services/wayland/hypridle.nix
+    ../../home/services/wayland/hyprpaper.nix
+  ];
 
   # =============== GENERAL =============== #
 
@@ -53,8 +60,6 @@
     playerctl
     imagemagick
     lutris-free
-    wl-clipboard
-    clipse
 
     # Theming
     catppuccin-cursors.mochaDark

@@ -101,13 +101,6 @@
     pavucontrol
     alsa-lib
     alsa-tools
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Maple Mono NF";
-      fontSize = "11";
-      background = "${./spaceman.png}";
-      loginBackground = true;
-    })
     wget
     unzip
     # xbanish
