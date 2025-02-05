@@ -22,8 +22,8 @@
     enable = true;
     waylandCompositors.hyprland = {
       prettyName = "Hyprland";
-      comment = "An intelligent tiling compositor";
-      binPath = "/run/current-system/sw/bin/hyprland";
+      comment = lib.mkForce "An intelligent tiling compositor";
+      binPath = "/run/current-system/sw/bin/Hyprland";
     };
   };
 }
