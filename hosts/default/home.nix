@@ -42,6 +42,7 @@
     yazi
     tofi
     socat
+    pango
 
     # Misc
     freetube
