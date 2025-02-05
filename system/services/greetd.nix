@@ -23,7 +23,7 @@
     waylandCompositors.hyprland = {
       prettyName = "Hyprland";
       comment = "An intelligent tiling compositor";
-      binPath = "/run/current-system/sw/bin/Hyprland";
+      binPath = "/run/current-system/sw/bin/hyprland";
     };
   };
 }
