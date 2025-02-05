@@ -14,7 +14,7 @@
     exec-once = [
       "uwsm finalize"
       "clipse -listen"
-      "${config.home.homeDirectory}/.config/hypr/eww/launch"
+      "${config.home.homeDirectory}/.config/eww/launch"
       "systemctl --user start hyprpolkitagent"
     ];
 
@@ -29,7 +29,7 @@
       pseudotile = true;
       preserve_split = true;
       smart_split = false;
-      smart_sesizing = false;
+      smart_resizing = false;
     };
 
     decoration = {

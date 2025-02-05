@@ -7,7 +7,7 @@
       "float, class:(xdg-desktop-portal-gtk)"
       "size 1200 800, class:(xdg-desktop-portal-gtk)"
 
-      "workspaece 6, class:^(Alacritty)$"
+      "workspace 6, class:^(Alacritty)$"
     ];
   };
 }

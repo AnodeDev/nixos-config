@@ -7,7 +7,7 @@ let
         builtins.toString (x + 1 - (c * 10));
     in [
       "$mod, ${ws}, workspace, ${toString (x + 1)}"
-      "$mod, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
+      "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
     ]
   )
   10);
@@ -38,6 +38,8 @@ in {
       "$mod SHIFT, O, movewindow, r"
 
       "$mod SHIFT, L, exec, ${runOnce "hyprlock"}"
+
+      "$mod, M, exec, alacritty --class clipse -e clipse"
     ]
       ++ workspaces;
   };
