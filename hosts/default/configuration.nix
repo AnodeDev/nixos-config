@@ -85,29 +85,13 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  services.xbanish.enable = true;
-
   # System-wide packages
   environment.systemPackages = with pkgs; [
     neovim-unwrapped
-    polybar
     eww
-    picom-pijulius
-    jq
-    feh
-    hyprpaper
-    alacritty
-    git
     pavucontrol
-    alsa-lib
-    alsa-tools
-    wget
-    unzip
-    # xbanish
     nixfmt-rfc-style
     libsndfile
-    # xdotool
-    sysstat
 
     # Programming
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
@@ -139,17 +123,6 @@
     };
   };
 
-  # Setup Emacs
-  services.emacs = {
-    enable = true;
-    startWithGraphical = true;
-  };
-
-
-  # Set main user
-  main-user.enable = true;
-  main-user.userName = "dexter";
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
@@ -164,6 +137,7 @@
   system.stateVersion = "24.05";
 
   # =============== GAMING =============== #
+
   programs.steam = {
     enable = true;
   };

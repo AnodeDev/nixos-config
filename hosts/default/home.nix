@@ -7,17 +7,16 @@
 {
   imports = [
     ../../modules/home-manager/variables.nix
-    ../../home/programs/browsers/zen.nix
-
-    ../../home/programs/wayland
-    ../../home/services/wayland/hypridle.nix
-    ../../home/services/wayland/hyprpaper.nix
+    ../../home/profiles/dexter
   ];
 
   # =============== GENERAL =============== #
 
-  home.username = "dexter";
-  home.homeDirectory = "/home/dexter";
+  home = {
+    username = "dexter";
+    homeDirectory = "/home/dexter";
+    stateVersion = "24.05";
+  };
 
   home.packages = with pkgs; [
     # PACKAGES
@@ -25,7 +24,6 @@
     # Useful
     brave
     btop
-    tree
     ripgrep
     xdg-ninja
     gnupg
@@ -41,8 +39,6 @@
     rofi
     yazi
     tofi
-    socat
-    pango
 
     # Misc
     freetube
@@ -54,9 +50,6 @@
     flameshot
     direnv
     sayonara
-    pciutils
-    usbutils
-    # xclip
     fastfetch
     playerctl
     imagemagick
@@ -99,28 +92,9 @@
 
   # =============== CONFIGS =============== #
 
-  programs = {
-    git = {
-      enable = true;
-      userName = "Dexter Hedman";
-      userEmail = "dexterhedman05@proton.me";
-
-      ignores = [
-        "*~"
-        "*.swp"
-      ];
-      extraConfig = {
-        init.defaultBranch = "main";
-        pull.rebase = false;
-      };
-    };
-
-    bat.enable = true;
-    zoxide.enable = true;
-    fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   # =============== GTK =============== #
@@ -162,11 +136,4 @@
     platformTheme.name = "gtk3";
 
   };
-
-  # =============== DON'T TOUCH! =============== #
-
-  home.stateVersion = "24.05";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

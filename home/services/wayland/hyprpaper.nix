@@ -12,7 +12,10 @@
 
     settings = {
       preload = ["${config.home.homeDirectory}/Media/Wallpapers/hex-landscape.png"];
-      wallpaper = ["${config.home.homeDirectory}/Media/Wallpapers/hex-landscape.png"];
+      wallpaper = [
+        "DP-1, ${config.home.homeDirectory}/Media/Wallpapers/hex-landscape.png"
+        "HDMI-A-1, ${config.home.homeDirectory}/Media/Wallpapers/hex-landscape.png"
+      ];
     };
   };
 
