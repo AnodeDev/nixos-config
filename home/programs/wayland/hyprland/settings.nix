@@ -2,6 +2,11 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
 
+    monitor = [
+      "HDMI-A-1, 1920x1080@120, 0x0, 1"
+      "DP-1, 2560x1440@240, 1920x0, 1"
+    ];
+
     env = [
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
     ];
