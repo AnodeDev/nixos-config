@@ -1,6 +1,43 @@
 {
   description = "My NixOS configuration";
 
+  outputs =
+    {
+      nixpkgs,
+      ... 
+    }@inputs:
+    let
+      lib = import "${nixpkgs}/lib";
+    in
+    {
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
+        pkgs = import nixpkgs {
+          config = {
+            allowUnfree = true;
+            allowUnfreePredicate = pkg:
+              builtins.elem (lib.getName pkg) [
+                "steam-unwrapped"
+                "steam"
+                "steam-run"
+                "steam-original"
+              ];
+          };
+          system = "x86_64-linux";
+          overlays = [ (import inputs.rust-overlay) ];
+        };
+        modules = [
+          ./hosts/default/configuration.nix
+          ./modules
+          ./system
+          inputs.home-manager.nixosModules.home-manager
+        ];
+      };
+    };
+
   inputs = {
     # IMPORTANT!
     systems.url = "github:nix-systems/default-linux";
@@ -62,41 +99,4 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs =
-    {
-      nixpkgs,
-      ... 
-    }@inputs:
-    let
-      lib = import "${nixpkgs}/lib";
-    in
-    {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-        };
-        pkgs = import nixpkgs {
-          config = {
-            allowUnfree = true;
-            allowUnfreePredicate = pkg:
-              builtins.elem (lib.getName pkg) [
-                "steam-unwrapped"
-                "steam"
-                "steam-run"
-                "steam-original"
-              ];
-          };
-          system = "x86_64-linux";
-          overlays = [ (import inputs.rust-overlay) ];
-        };
-        modules = [
-          ./hosts/default/configuration.nix
-          ./modules
-          ./system
-          inputs.home-manager.nixosModules.home-manager
-        ];
-      };
-    };
 }
