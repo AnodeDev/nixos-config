@@ -8,6 +8,7 @@
     ./binds.nix
     ./rules.nix
     ./settings.nix
+    ./workspaces.nix
   ];
 
   wayland.windowManager.hyprland = {

@@ -113,6 +113,11 @@
     # oxide
   ];
 
+  main-user = {
+    enable = true;
+    userName = "dexter";
+  };
+
   # Home manager
   home-manager = {
     extraSpecialArgs = {
