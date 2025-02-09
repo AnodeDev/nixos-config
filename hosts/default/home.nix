@@ -39,6 +39,7 @@
     rofi
     yazi
     tofi
+    alacritty
 
     # Misc
     freetube
