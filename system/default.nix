@@ -1,6 +1,6 @@
 {
   imports = [
-    ./services/greetd.nix
+    ./services/sddm.nix
     ./nix/settings.nix
     ./programs
   ];
