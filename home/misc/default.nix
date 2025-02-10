@@ -8,5 +8,6 @@
     sayonara
     vesktop
     kitty
+    pass
   ];
 }
