@@ -44,7 +44,7 @@
               };
             }
             {
-              template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>";
+              template = " {{ .HEAD }} {{ if or (.Working.Changed) (.Staging.Changed) }}?{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }} </>";
               foreground = "p:gray";
               background = "transparent";
               type = "git";
@@ -57,7 +57,7 @@
               ];
 
               properties = {
-                branch_icon = "";
+                branch_icon = " ";
                 cache_duration = "none";
                 commit_icon = "";
                 fetch_status = true;
