@@ -5,7 +5,6 @@
 }:
 {
   imports = [
-    inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
   ];
 
@@ -116,16 +115,6 @@
   main-user = {
     enable = true;
     userName = "dexter";
-  };
-
-  # Home manager
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users = {
-      "dexter" = import ./home.nix;
-    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are

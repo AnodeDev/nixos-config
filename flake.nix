@@ -33,8 +33,13 @@
           ./hosts/default/configuration.nix
           ./modules
           ./system
-          inputs.home-manager.nixosModules.home-manager
         ];
+      };
+
+      homeConfigurations."dexter@dexter" = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [ "./home/profiles/dexter" ];
+        extraSpecialArgs = { inherit inputs; };
       };
     };
 
