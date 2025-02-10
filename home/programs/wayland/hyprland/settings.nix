@@ -1,4 +1,4 @@
-{config, ...}: {
+{config, lib, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
 
@@ -49,7 +49,7 @@
         range = 10;
         render_power = 3;
         offset = "4 4";
-        color = "rgba(00000055)";
+        color = lib.mkForce "rgba(00000055)";
       };
     };
 
