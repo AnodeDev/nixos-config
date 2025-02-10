@@ -4,6 +4,7 @@
 
     ../../programs/browsers/zen.nix
     ../../programs/wayland
+    ../../programs/security
 
     ../../services/wayland/hyprpaper.nix
 
