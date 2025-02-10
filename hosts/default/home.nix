@@ -41,6 +41,7 @@
     tofi
     alacritty
     kitty
+    hyprpolkitagent
 
     # Misc
     freetube
@@ -77,20 +78,6 @@
     alacritty = true;
     eww = true;
   };
-
-  # =============== HOME DIRECTORY =============== #
-
-  home.activation.cleanup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    rm -rf ~/.gnupg
-    rm -f ~/.gtkrc-2.0
-    rm -rf ~/.icons
-    rm -rf ~/.compose-cache
-    rm -rf ~/.nix-defexpr
-    rm -rf ~/.nix-profile
-    rm -rf ~/.w3m
-    rm -rf ~/.wine
-    rm -f ~/.zcompdump
-  '';
 
   # =============== CONFIGS =============== #
 
@@ -138,4 +125,6 @@
     platformTheme.name = "gtk3";
 
   };
+
+  programs.home-manager.enable = true;
 }

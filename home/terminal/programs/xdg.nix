@@ -42,7 +42,6 @@ in {
 
     mimeApps = {
       enable = true;
-      defaultApplications = associations;
     };
   };
 
