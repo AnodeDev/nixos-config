@@ -8,6 +8,6 @@
     ../../services/wayland/hypridle.nix
     ../../services/wayland/hyprpaper.nix
 
-    ../../terminal/emulators/alacritty.nix
+    # ../../terminal/emulators/alacritty.nix
   ];
 }

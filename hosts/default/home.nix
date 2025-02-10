@@ -40,6 +40,7 @@
     yazi
     tofi
     alacritty
+    kitty
 
     # Misc
     freetube
