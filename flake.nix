@@ -10,7 +10,7 @@
       lib = import "${nixpkgs}/lib";
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.dexter = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
@@ -30,7 +30,7 @@
           overlays = [ (import inputs.rust-overlay) ];
         };
         modules = [
-          ./hosts/default/configuration.nix
+          ./hosts/dexter/configuration.nix
           ./modules
           ./system
           inputs.home-manager.nixosModules.home-manager
