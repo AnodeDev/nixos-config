@@ -34,6 +34,7 @@
           ./modules
           ./system
           inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
         ];
       };
     };
@@ -72,6 +73,15 @@
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
     };
 
     zen-browser = {
