@@ -14,8 +14,8 @@
     shellAliases = {
       l = "eza -l";
       la = "eza -la";
-      passpers = "PASSWORD_STORE_DIR=~/Personal/Secret/personal pass";
-      passprof = "PASSWORD_STORE_DIR=~/Personal/Secret/professional pass";
+      passpers = "PASSWORD_STORE_DIR=~/Personal/Secret/.pass/personal pass";
+      passprof = "PASSWORD_STORE_DIR=~/Personal/Secret/.pass/professional pass";
     }
       // lib.optionalAttrs config.programs.bat.enable {cat = "bat";};
 
