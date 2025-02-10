@@ -15,11 +15,6 @@
       options.dark = true;
     };
 
-    signing = {
-      key = "${config.home.homeDirectory}/.ssh/id_ed25519";
-      signByDefault = true;
-    };
-
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = true;
