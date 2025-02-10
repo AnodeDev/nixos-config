@@ -3,7 +3,7 @@
     enable = true;
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    image = "${builtins.getEnv "HOME"}/Media/Wallpapers/hex-landscape.png";
+    image = ./wallpaper.png;
 
     cursor = {
       package = pkgs.bibata-cursors;
