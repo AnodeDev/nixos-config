@@ -7,5 +7,6 @@
     freetube
     sayonara
     vesktop
+    kitty
   ];
 }
