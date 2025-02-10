@@ -5,6 +5,8 @@
     ../../programs/browsers/zen.nix
     ../../programs/wayland
 
+    ../../services/wayland/hyprpaper.nix
+
     ../../terminal
   ];
 
