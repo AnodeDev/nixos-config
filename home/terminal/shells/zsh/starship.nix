@@ -15,11 +15,6 @@
         staged = "✓";
         stashed = "≡";
       };
-
-      nix_shell = {
-        symbol = " ";
-        heuristic = true;
-      };
     };
   };
 }
