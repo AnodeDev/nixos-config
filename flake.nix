@@ -50,7 +50,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/HyprLand";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+    };
+
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprutils.follows = "hyprland/hyprutils";
+        hyprlang.follows = "hyprland/hyprlang";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
 
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
