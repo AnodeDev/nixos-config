@@ -6,7 +6,6 @@
 }: {
   imports = [
     ./hyprland
-    ./hyprlock.nix
   ];
 
   home.packages = with pkgs; [

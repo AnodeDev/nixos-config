@@ -119,6 +119,7 @@
   };
 
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
       "dexter" = import ../../home/profiles/dexter;
