@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nvf = {
     settings = {
       vim.treesitter = {
@@ -14,6 +14,12 @@
         nix = {
           enable = true;
           treesitter.enable = true;
+
+          format = {
+            enable = true;
+            package = pkgs.nixfmt;
+            type = "nixfmt";
+          };
         };
       };
     };
