@@ -1,13 +1,21 @@
-{
-  programs.nvf = {
+{pkgs, ...}: {
+  programs.nvf.settings = {
     config.vim.lazy.plugins = {
-      "oil-nvim" = {
+      "oil.nvim" = {
         package = pkgs.vimPlugins.oil-nvim;
+        setupModule = "oil";
         setupOpts = {
-          default_file_explorer = true;
         };
+        
         lazy = true;
-      }
+
+        keys = [
+          {
+            key = "<leader>ff";
+            action = "<CMD>Oil<CR>";
+          }
+        ];
+      };
     };
   };
 }
