@@ -1,6 +1,7 @@
 {
   imports = [
     ./theme.nix
+    ./keybinds.nix
   ];
 
   programs.nvf = {
