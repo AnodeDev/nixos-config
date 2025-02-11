@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./cleanup.nix
     ./fonts.nix
   ];
 
