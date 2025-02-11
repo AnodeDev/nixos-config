@@ -2,6 +2,7 @@
   imports = [
     ./theme.nix
     ./keybinds.nix
+    ./treesitter.nix
   ];
 
   programs.nvf = {

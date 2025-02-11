@@ -2,6 +2,7 @@
   programs.nvf = {
     settings = {
       vim.keymaps = [
+        # Movement
         {
           key = "n";
           mode = "n";
@@ -26,6 +27,8 @@
           action = "l";
           silent = true;
         }
+
+        # Mode switching
         {
           key = "s";
           mode = "n";
@@ -50,6 +53,8 @@
           action = "O";
           silent = true;
         }
+
+        # Misc
         {
           key = "<esc>";
           mode = "n";
