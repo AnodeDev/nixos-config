@@ -22,6 +22,6 @@
     enableSshSupport = true;
     defaultCacheTtl = 600;
     maxCacheTtl = 7200;
-    pinentryPackage = pkgs.pinentry-gtk2; # Adjust to "curses" if you want a TUI pin entry
+    pinentryPackage = pkgs.pinentry-curses;
   };
 }
