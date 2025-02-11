@@ -34,6 +34,7 @@
           ./modules
           ./system
           inputs.home-manager.nixosModules.home-manager
+          inputs.nvf.nixosModules.default
           inputs.stylix.nixosModules.stylix
         ];
       };
@@ -67,6 +68,14 @@
         hyprlang.follows = "hyprland/hyprlang";
         nixpkgs.follows = "hyprland/nixpkgs";
         systems.follows = "hyprland/systems";
+      };
+    };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
       };
     };
 
