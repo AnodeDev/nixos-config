@@ -1,7 +1,7 @@
 {
   imports = [
     ./keybinds.nix
-    ./options.nix
+    ./options
     ./theme.nix
     ./treesitter.nix
     ./plugins
