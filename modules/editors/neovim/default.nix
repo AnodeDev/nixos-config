@@ -3,6 +3,7 @@
     ./theme.nix
     ./keybinds.nix
     ./treesitter.nix
+    ./plugins
   ];
 
   programs.nvf = {

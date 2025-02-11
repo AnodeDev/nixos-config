@@ -87,10 +87,8 @@
 
   # System-wide packages
   environment.systemPackages = with pkgs; [
-    neovim-unwrapped
     eww
     pavucontrol
-    nixfmt-rfc-style
     libsndfile
 
     # Programming
