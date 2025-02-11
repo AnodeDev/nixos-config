@@ -12,8 +12,7 @@
       keyserver = "hkps://keys.openpgp.org";
       keyserver-options = "auto-key-retrieve";
       no-comments = true;
-      no-emit-version = true;
-      # tofu-policy = "good";
+      tofu-policy = "good";
     };
   };
 

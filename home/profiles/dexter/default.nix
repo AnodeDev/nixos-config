@@ -26,7 +26,6 @@
     socat
     imagemagick
     fzf
-    brave
   ];
 
   programs.home-manager.enable = true;
