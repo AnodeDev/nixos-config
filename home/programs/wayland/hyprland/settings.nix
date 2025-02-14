@@ -14,7 +14,6 @@
     exec-once = [
       "uwsm finalize"
       "clipse -listen"
-      "${config.home.homeDirectory}/.config/eww/launch"
       "systemctl --user start hyprpolkitagent"
     ];
 

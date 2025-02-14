@@ -10,5 +10,6 @@
     vesktop
     kitty
     pass
+    mupdf
   ];
 }

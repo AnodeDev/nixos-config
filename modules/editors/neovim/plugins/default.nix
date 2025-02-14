@@ -1,6 +1,6 @@
 {
   imports = [
     ./oil.nix
-    ./startup.nix
+    # ./startup.nix
   ];
 }
