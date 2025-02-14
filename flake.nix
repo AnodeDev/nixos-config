@@ -47,6 +47,14 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # The rest, in alphabetical order
+    eww = {
+      url = "github:elkowar/eww";
+      inputs = {
+        nixkpgs.follows = "nixpkgs";
+        rust-overlay.follows ="rust-overlay";
+      };
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
