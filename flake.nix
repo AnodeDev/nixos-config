@@ -10,7 +10,7 @@
       lib = import "${nixpkgs}/lib";
     in
     {
-      nixosConfigurations.dexter = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.hex = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
@@ -30,7 +30,7 @@
           overlays = [ (import inputs.rust-overlay) ];
         };
         modules = [
-          ./hosts/dexter/configuration.nix
+          ./hosts/hex/configuration.nix
           ./modules
           ./system
           inputs.home-manager.nixosModules.home-manager
@@ -50,7 +50,6 @@
     eww = {
       url = "github:elkowar/eww";
       inputs = {
-        nixkpgs.follows = "nixpkgs";
         rust-overlay.follows ="rust-overlay";
       };
     };

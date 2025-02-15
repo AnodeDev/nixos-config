@@ -24,7 +24,7 @@
 
   # Hostname
   networking = {
-    hostName = "dexter";
+    hostName = "hex";
     networkmanager.enable = true;
   };
 
