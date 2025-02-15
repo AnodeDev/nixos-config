@@ -15,6 +15,7 @@
       "uwsm finalize"
       "clipse -listen"
       "systemctl --user start hyprpolkitagent"
+      "${config.home.homeDirectory}/.config/eww/bar/launch"
     ];
 
     general = {
