@@ -3,6 +3,7 @@
     ../../misc
 
     ../../programs/browsers/zen.nix
+    ../../programs/desktop
     ../../programs/wayland
     ../../programs/security
 
