@@ -4,7 +4,7 @@
 
 I switched from Arch Linux to NixOS in July and I have not looked back. The amount of control within the NixOS configuration is amazing, way better than having to look for files all over the OS. I'm still a novice when it comes to NixOS, but this is my WIP configuration in case anyone wants a head start ;)
 
-This configuration uses BSPWM, SXHKD and Polybar for window management using X11, which is the only one that's currently working. I'm working on implementing more and switching to Wayland, but that's not working as of right now.
+This configuration uses Hyprland with Eww as the system bar.
 
 ## Installation
 
@@ -14,5 +14,10 @@ This configuration uses BSPWM, SXHKD and Polybar for window management using X11
 4. navigate to the `root` of the directory and run:
 ```
 sudo nixos-rebuild switch --flake .#{user}
+```
+
+or (make sure the nixosConfiguration name is the same as the networking.hostName):
+```
+nh os switch
 ```
 (note that {user} is the name of the directory you use within the `hosts` directory)
