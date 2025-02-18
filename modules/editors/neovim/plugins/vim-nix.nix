@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.nvf.settings = {
     config.vim.lazy.plugins = {
-      "vim-nix.nvim" = {
+      "vim-nix" = {
         package = pkgs.vimPlugins.vim-nix;
       };
     };
