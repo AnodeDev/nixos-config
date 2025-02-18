@@ -22,7 +22,6 @@
     alacritty
 
     playerctl
-    eww
     tofi
     socat
     imagemagick
