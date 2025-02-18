@@ -87,7 +87,6 @@
 
   # System-wide packages
   environment.systemPackages = with pkgs; [
-    eww
     pavucontrol
     libsndfile
 
