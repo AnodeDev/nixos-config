@@ -11,5 +11,7 @@
     kitty
     pass
     mupdf
+    streamlink
+    streamlink-twitch-gui-bin
   ];
 }
