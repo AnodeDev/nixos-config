@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./animations.nix
     ./binds.nix
     ./rules.nix
     ./settings.nix
