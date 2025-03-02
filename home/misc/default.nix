@@ -5,13 +5,20 @@
   ];
 
   home.packages = with pkgs; [
+    # Media
     freetube
     sayonara
-    vesktop
-    kitty
-    pass
-    mupdf
     streamlink
     streamlink-twitch-gui-bin
+
+    # Social
+    vesktop
+
+    # Tools
+    pass
+    mupdf
+
+    # Necessary (if something goes wrong)
+    kitty
   ];
 }
