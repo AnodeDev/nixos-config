@@ -113,6 +113,7 @@
   main-user = {
     enable = true;
     userName = "dexter";
+    shell = pkgs.nushell;
   };
 
   home-manager = {
