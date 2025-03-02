@@ -51,10 +51,23 @@
   };
 
   # Audio
-  services.pipewire.enable = false;
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
+  environment.sessionVariables = {
+    PKG_CONFIG_PATH = "${pkgs.alsa-lib.dev}/lib/pkgconfig";
+  };
 
   services.pulseaudio = {
-    enable = true;
+    enable = false;
     package = pkgs.pulseaudioFull;
     # Change default-sample-rate to 192000 for higher res
     # Change resample-method to soxr-vhq for better resampling
@@ -105,6 +118,10 @@
     nasm
     gdb
     gnumake
+
+    # Audio
+    alsa-utils
+    alsa-lib
 
     # Custom packages
     # oxide
