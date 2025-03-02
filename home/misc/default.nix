@@ -20,5 +20,6 @@
 
     # Necessary (if something goes wrong)
     kitty
+    neovim
   ];
 }

@@ -1,6 +1,6 @@
 { lib, ... }: {
   imports = [
-    ./editors/neovim
+    # ./editors/neovim
     ./nixos/main-user.nix
     ./nixos/nh.nix
     ./ricing/stylix.nix
