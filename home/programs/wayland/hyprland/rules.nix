@@ -10,9 +10,5 @@
       "workspace 1, class:(zen)"
       "workspace 6, class:^(foot)$"
     ];
-
-    layerrule = [
-      "blur, eww"
-    ];
   };
 }
