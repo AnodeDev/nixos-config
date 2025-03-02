@@ -10,5 +10,9 @@
       "workspace 1, class:(zen)"
       "workspace 6, class:^(Alacritty)$"
     ];
+
+    layerrule = [
+      "blur, eww"
+    ];
   };
 }
