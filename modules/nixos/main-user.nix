@@ -17,6 +17,12 @@ in
         username
       '';
     };
+    shell = lib.mkOption {
+      default = pkgs.zsh;
+      description = ''
+        user shell
+      '';
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -28,7 +34,7 @@ in
         "networkManager"
         "plugdev"
       ];
-      shell = pkgs.zsh;
+      shell = cfg.shell;
     };
 
     programs.zsh.enable = true;
