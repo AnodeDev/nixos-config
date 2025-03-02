@@ -21,7 +21,7 @@ in {
     ];
 
     bind = [
-      "$mod, Return, exec, uwsm app -- foot"
+      "$mod, Return, exec, uwsm app -- alacritty"
       "$mod, C, killactive"
 
       "$mod, F, fullscreen"
@@ -39,7 +39,7 @@ in {
 
       "$mod SHIFT, L, exec, ${runOnce "hyprlock"}"
 
-      "$mod, M, exec, foot --app-id=\"clipse\" clipse"
+      "$mod, M, exec, alacritty --class clipse -e clipse"
 
       "$mod, P, exec, tofi-drun --drun-launch=true"
     ]
