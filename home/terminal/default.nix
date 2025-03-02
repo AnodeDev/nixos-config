@@ -6,6 +6,7 @@ in {
   imports = [
     ./programs
     ./shells/zsh
+    ./shells/nu
   ];
 
   home.sessionVariables = {
