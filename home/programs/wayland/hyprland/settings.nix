@@ -15,7 +15,8 @@
       "uwsm finalize"
       "clipse -listen"
       "systemctl --user start hyprpolkitagent"
-      "${config.home.homeDirectory}/.config/eww/launch"
+      "eww daemon"
+      "eww open bar"
     ];
 
     general = {
@@ -52,6 +53,11 @@
         offset = "4 4";
         color = lib.mkForce "rgba(00000055)";
       };
+    };
+
+    misc = {
+      disable_hyprland_logo = true;
+      font_family = "Maple Mono NF";
     };
 
     cursor = {
