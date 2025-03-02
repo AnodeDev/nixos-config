@@ -39,7 +39,7 @@ in {
 
       "$mod SHIFT, L, exec, ${runOnce "hyprlock"}"
 
-      "$mod, M, exec, alacritty --class clipse -e clipse"
+      "$mod, M, exec, foot --app-id=\"clipse\" clipse"
 
       "$mod, P, exec, tofi-drun --drun-launch=true"
     ]
