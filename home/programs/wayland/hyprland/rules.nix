@@ -8,7 +8,9 @@
       "size 1200 800, class:(xdg-desktop-portal-gtk)"
 
       "workspace 1, class:(zen)"
-      "workspace 6, class:^(foot)$"
+      "workspace 6, class:(Alacritty)"
+
+      "opacity 1, class:(Alacritty)"
     ];
   };
 }
