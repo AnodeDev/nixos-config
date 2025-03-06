@@ -8,8 +8,6 @@
     # Media
     freetube
     sayonara
-    streamlink
-    streamlink-twitch-gui-bin
 
     # Social
     vesktop
