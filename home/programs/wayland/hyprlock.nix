@@ -7,7 +7,8 @@
       disable_loading_bar = true;
 
       background = {
-        path = lib.mkForce "${config.home.homeDirectory}/Media/Wallpapers/spaceman.png";
+        path = lib.mkForce "";
+        color = lib.mkForce "rgba(0, 0, 0, 1.0)";
       };
 
       input-field = {
@@ -16,24 +17,23 @@
         outline_thickness = "0";
         dots_size = "0.2";
         dots_center = true;
-        inner_color = lib.mkForce "rgba(69, 71, 90, 1.0)";
+        inner_color = lib.mkForce "rgba(30, 30, 46, 1.0)";
         font_color = lib.mkForce "rgba(205, 214, 244, 1.0)";
         font_family = lib.mkForce "Maple Mono NF";
         placeholder_text = "...";
         fade_on_empty = false;
       };
 
-      label = [
+      image = [
         {
           monitor = "DP-1";
-          text = "Welcome";
-          text_align = "center";
-          color = lib.mkForce "rgba(205, 214, 244, 1.0)";
-          font_size = 40;
-          font_family = "Maple Mono NF";
-          position = "0, -200";
+          path = "~/Media/Pictures/sleep.png";
+          size = 768;
+          rounding = 0;
+          border_size = 0;
+          position = "0, 344";
           halign = "center";
-          valign = "top";
+          valign = "center";
         }
       ];
     };
