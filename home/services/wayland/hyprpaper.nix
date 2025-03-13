@@ -11,10 +11,13 @@
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
 
     settings = {
-      preload = ["${config.home.homeDirectory}/Media/Wallpapers/red-landscape.png"];
+      preload = [
+        "${config.home.homeDirectory}/Media/Wallpapers/moon-friend.png"
+        "${config.home.homeDirectory}/Media/Wallpapers/dragon-slayer.png"
+      ];
       wallpaper = [
-        "HDMI-A-1, ${config.home.homeDirectory}/Media/Wallpapers/red-landscape.png"
-        "DP-1, ${config.home.homeDirectory}/Media/Wallpapers/red-landscape.png"
+        "HDMI-A-1, ${config.home.homeDirectory}/Media/Wallpapers/moon-friend.png"
+        "DP-1, ${config.home.homeDirectory}/Media/Wallpapers/moon-friend.png"
       ];
     };
   };
