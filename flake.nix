@@ -27,7 +27,10 @@
               ];
           };
           system = "x86_64-linux";
-          overlays = [ (import inputs.rust-overlay) ];
+          overlays = [
+            (import inputs.rust-overlay)
+            inputs.zig-overlay.overlays.default
+          ];
         };
         modules = [
           ./hosts/hex/configuration.nix
@@ -108,6 +111,13 @@
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
+      };
+    };
+
+    zig-overlay = {
+      url = "github:mitchellh/zig-overlay";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
       };
     };
 

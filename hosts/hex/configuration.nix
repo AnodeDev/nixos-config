@@ -109,7 +109,7 @@
       targets = [ "thumbv7em-none-eabihf" ];
     }))
     go
-    zig
+    zigpkgs.master
 
     # Necessary packages
     pkg-config
