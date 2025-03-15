@@ -20,6 +20,7 @@
 
   home.packages = with pkgs; [
     alacritty
+    ghostty
 
     playerctl
     tofi

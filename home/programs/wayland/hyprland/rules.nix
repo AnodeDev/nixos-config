@@ -10,7 +10,7 @@
       "workspace 1, class:(zen)"
       "workspace 3, class:(steam)"
       "workspace 4, class:(vesktop)"
-      "workspace 6, class:(Alacritty)"
+      "workspace 6, class:(com.mitchellh.ghostty)"
       "workspace 7, class:(FreeTube)"
     ];
   };

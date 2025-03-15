@@ -21,7 +21,7 @@ in {
     ];
 
     bind = [
-      "$mod, Return, exec, uwsm app -- alacritty"
+      "$mod, Return, exec, uwsm app -- ghostty"
       "$mod, C, killactive"
 
       "$mod, F, fullscreen"
