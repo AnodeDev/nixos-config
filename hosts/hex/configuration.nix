@@ -118,6 +118,7 @@
     nasm
     gdb
     gnumake
+    fasm
 
     # Audio
     alsa-utils
