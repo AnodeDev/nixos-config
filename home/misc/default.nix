@@ -8,6 +8,7 @@
     # Media
     freetube
     sayonara
+    floorp
 
     # Social
     vesktop
