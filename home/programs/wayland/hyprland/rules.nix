@@ -12,6 +12,7 @@
       "workspace 4, class:(vesktop)"
       "workspace 6, class:(com.mitchellh.ghostty)"
       "workspace 7, class:(FreeTube)"
+      "workspace 8, class:^(steam_app_.*)$"
     ];
   };
 }
