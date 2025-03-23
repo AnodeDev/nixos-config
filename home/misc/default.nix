@@ -16,6 +16,7 @@
     # Tools
     pass
     mupdf
+    qemu
 
     # Necessary (if something goes wrong)
     kitty
