@@ -23,14 +23,15 @@
       gaps_in = 10;
       gaps_out = 20;
       border_size = 0;
-      layout = "dwindle";
+      layout = "master";
     };
 
-    dwindle = {
-      pseudotile = true;
-      preserve_split = true;
-      smart_split = false;
+    master = {
+      new_status = "slave";
+      new_on_top = false;
+      orientation = "left";
       smart_resizing = false;
+      drop_at_cursor = true;
     };
 
     decoration = {
