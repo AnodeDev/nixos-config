@@ -17,6 +17,7 @@
     pass
     mupdf
     qemu
+    protonvpn-gui
 
     # Necessary (if something goes wrong)
     kitty
