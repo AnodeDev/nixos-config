@@ -6,7 +6,6 @@
 
   home.packages = with pkgs; [
     # Media
-    freetube
     sayonara
     floorp
 
