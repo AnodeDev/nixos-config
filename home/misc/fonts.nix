@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    maple-mono-NF
+    maple-mono.NF
     times-newer-roman
   ];
 }
