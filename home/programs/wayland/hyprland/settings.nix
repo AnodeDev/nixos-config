@@ -16,7 +16,6 @@
       "clipse -listen"
       "systemctl --user start hyprpolkitagent"
       "eww daemon"
-      "eww open bar"
     ];
 
     general = {
