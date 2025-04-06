@@ -17,6 +17,7 @@
     mupdf
     qemu
     protonvpn-gui
+    bc
 
     # Necessary (if something goes wrong)
     kitty
