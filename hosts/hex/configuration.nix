@@ -162,6 +162,7 @@
   };
 
   hardware.xpadneo.enable = true;
+  boot.blacklistedKernelModules = [ "xpad" ];
 
   services.udev = {
     enable = true;
