@@ -161,10 +161,11 @@
     enable = true;
   };
 
+  hardware.xpadneo.enable = true;
+
   services.udev = {
     enable = true;
     packages = with pkgs; [
-      xpad
       qmk-udev-rules
     ];
   };
