@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   self,
   lib,
@@ -15,7 +16,6 @@
     wlr-randr
     wlopm
     way-displays
-    swww
     waylock
   ];
 

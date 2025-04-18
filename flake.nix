@@ -114,6 +114,11 @@
       };
     };
 
+    swww = {
+      url = "github:LGFae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zig-overlay = {
       url = "github:mitchellh/zig-overlay";
       inputs = {

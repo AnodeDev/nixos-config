@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ./settings.nix
+
+    ../../../services/wayland/swww.nix
   ];
 
   wayland.windowManager.river = {
