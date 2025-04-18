@@ -9,6 +9,7 @@
     dotDir = ".config/zsh";
     history = {
       path = "${config.xdg.dataHome}/zsh_history";
+      ignoreAllDups = true;
     };
 
     shellAliases = {
@@ -20,14 +21,5 @@
       // lib.optionalAttrs config.programs.bat.enable {cat = "bat";};
 
     shellGlobalAliases = {eza = "eza --icons --git";};
-
-    zplug = {
-      enable = true;
-
-      plugins = [
-        { name = "zdharma-continuum/fast-syntax-highlighting"; }
-        { name = "Aloxaf/fzf-tab"; }
-      ];
-    };
   };
 }
