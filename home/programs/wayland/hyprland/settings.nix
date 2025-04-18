@@ -21,7 +21,9 @@
     general = {
       gaps_in = 10;
       gaps_out = 20;
-      border_size = 0;
+      border_size = 3;
+      "col.active_border" = lib.mkForce "rgba(f9e2afcc)";
+      "col.inactive_border" = lib.mkForce "rgb(1e1e2e)";
       layout = "master";
     };
 
@@ -35,6 +37,8 @@
 
     decoration = {
       rounding = 20;
+      active_opacity = 0.9;
+      inactive_opacity = 0.9;
 
       blur = {
         enabled = true;
@@ -46,10 +50,11 @@
 
       shadow = {
         enabled = true;
-        range = 10;
-        render_power = 3;
-        offset = "4 4";
-        color = lib.mkForce "rgba(00000055)";
+        range = 7;
+        render_power = 2;
+        offset = "0 0";
+        color = lib.mkForce "rgba(f9e2afcc)";
+        color_inactive = lib.mkForce "rgb(1e1e2e)";
       };
     };
 

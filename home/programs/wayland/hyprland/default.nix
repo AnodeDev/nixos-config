@@ -7,6 +7,7 @@
   imports = [
     ./animations.nix
     ./binds.nix
+    ./hyprlock.nix
     ./rules.nix
     ./settings.nix
     ./workspaces.nix

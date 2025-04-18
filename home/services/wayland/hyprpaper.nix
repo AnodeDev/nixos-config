@@ -14,11 +14,11 @@
       preload = [
         "${config.home.homeDirectory}/Media/Wallpapers/moon-friend.png"
         "${config.home.homeDirectory}/Media/Wallpapers/dragon-slayer.png"
-        "${config.home.homeDirectory}/Media/Wallpapers/mystic-dawn.png"
+        "${config.home.homeDirectory}/Media/Wallpapers/pixel-sky.png"
       ];
       wallpaper = [
-        "HDMI-A-1, ${config.home.homeDirectory}/Media/Wallpapers/moon-friend.png"
-        "DP-1, ${config.home.homeDirectory}/Media/Wallpapers/moon-friend.png"
+        "HDMI-A-1, ${config.home.homeDirectory}/Media/Wallpapers/pixel-sky.png"
+        "DP-1, ${config.home.homeDirectory}/Media/Wallpapers/pixel-sky.png"
       ];
     };
   };
