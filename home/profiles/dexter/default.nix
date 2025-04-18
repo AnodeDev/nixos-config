@@ -7,8 +7,6 @@
     ../../programs/wayland
     ../../programs/security
 
-    ../../services/wayland/hyprpaper.nix
-
     ../../terminal
   ];
 

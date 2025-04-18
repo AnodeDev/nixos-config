@@ -11,6 +11,8 @@
     ./rules.nix
     ./settings.nix
     ./workspaces.nix
+
+    ../../../services/wayland/hyprpaper.nix
   ];
 
   wayland.windowManager.hyprland = {
