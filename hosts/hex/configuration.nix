@@ -124,6 +124,9 @@
     alsa-utils
     alsa-lib
 
+    # Necessary until River gets a flake
+    river
+
     # Custom packages
     # oxide
   ];
