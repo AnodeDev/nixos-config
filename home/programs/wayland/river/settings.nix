@@ -11,6 +11,27 @@
 
       default-layout = "rivertile";
 
+      tag-label = [
+        "1 Main 1"
+        "2 Main 2"
+        "3 Main 3"
+        "4 Main 4"
+        "5 Main 5"
+        "6 Ext 1"
+        "7 Ext 2"
+        "8 Ext 3"
+        "9 Ext 4"
+        "10 Ext 5"
+      ];
+
+      output = [
+        "DP-1 tags 1 2 3 4 5"
+        "HDMI-A-1 tags 6 7 8 9 10"
+      ];
+
+      focus-output = "DP-1";
+      set-focused-tags = 1;
+
       map = [
         "normal $mod Return spawn $terminal"
         "normal $mod C close"
