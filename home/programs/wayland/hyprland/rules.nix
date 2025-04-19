@@ -7,13 +7,13 @@
       "float, class:(xdg-desktop-portal-gtk)"
       "size 1200 800, class:(xdg-desktop-portal-gtk)"
 
-      "opacity 1, class:^(FreeTube)"
+      "opacity 1.0, class:(FreeTube)"
 
-      "workspace 1, class:^(zen)"
-      "workspace 3, class:^(steam)"
-      "workspace 4, class:^(vesktop)"
+      "workspace 1, class:(zen)"
+      "workspace 3, class:(steam)"
+      "workspace 4, class:(vesktop)"
       "workspace 6, class:^(com.mitchellh.ghostty)"
-      "workspace 7, class:^(FreeTube)"
+      "workspace 7, class:(FreeTube)"
       "workspace 8, class:^(steam_app_.*)$"
     ];
     layerrule = [
