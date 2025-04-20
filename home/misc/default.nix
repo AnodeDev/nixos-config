@@ -18,6 +18,7 @@
     qemu
     protonvpn-gui
     bc
+    obsidian
 
     # Necessary (if something goes wrong)
     kitty

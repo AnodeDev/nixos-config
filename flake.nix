@@ -20,6 +20,7 @@
             allowUnfree = true;
             allowUnfreePredicate = pkg:
               builtins.elem (lib.getName pkg) [
+                "obsidian"
                 "steam-unwrapped"
                 "steam"
                 "steam-run"

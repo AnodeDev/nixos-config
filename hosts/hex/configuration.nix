@@ -134,12 +134,14 @@
   main-user = {
     enable = true;
     userName = "dexter";
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users = {
       "dexter" = import ../../home/profiles/dexter;
     };
