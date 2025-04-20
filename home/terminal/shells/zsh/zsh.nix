@@ -10,6 +10,7 @@
     history = {
       path = "${config.xdg.dataHome}/zsh_history";
       ignoreAllDups = true;
+      ignoreSpace = true;
     };
 
     shellAliases = {
