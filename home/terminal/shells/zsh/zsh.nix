@@ -12,6 +12,8 @@
       ignoreAllDups = true;
       ignoreSpace = true;
     };
+    defaultKeymap = "emacs";
+    syntaxHighlighting.enable = true;
 
     shellAliases = {
       l = "eza -l";

@@ -18,7 +18,7 @@ in
       '';
     };
     shell = lib.mkOption {
-      default = pkgs.zsh;
+      default = pkgs.shadow;
       description = ''
         user shell
       '';
@@ -35,8 +35,7 @@ in
         "plugdev"
       ];
       shell = cfg.shell;
+      ignoreShellProgramCheck = true;
     };
-
-    programs.zsh.enable = true;
   };
 }
