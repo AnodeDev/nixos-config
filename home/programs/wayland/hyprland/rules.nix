@@ -16,8 +16,5 @@
       "workspace 7, class:(FreeTube)"
       "workspace 8, class:^(steam_app_.*)$"
     ];
-    layerrule = [
-      "blur, eww"
-    ];
   };
 }
