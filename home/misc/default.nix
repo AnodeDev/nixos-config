@@ -19,6 +19,7 @@
     protonvpn-gui
     bc
     obsidian
+    pcsx2
 
     # Necessary (if something goes wrong)
     kitty
