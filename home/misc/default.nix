@@ -16,7 +16,6 @@
     pass
     mupdf
     qemu
-    protonvpn-gui
     bc
     obsidian
     pcsx2
