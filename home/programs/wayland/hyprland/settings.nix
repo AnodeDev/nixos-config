@@ -21,9 +21,9 @@
     general = {
       gaps_in = 10;
       gaps_out = 20;
-      border_size = 3;
-      "col.active_border" = lib.mkForce "rgba(f9e2afcc)";
-      "col.inactive_border" = lib.mkForce "rgb(1e1e2e)";
+      border_size = 2;
+      "col.active_border" = lib.mkForce "rgb(cdd6f4)";
+      "col.inactive_border" = lib.mkForce "rgb(cdd6f4)";
       layout = "master";
     };
 
@@ -53,7 +53,7 @@
         range = 7;
         render_power = 2;
         offset = "0 0";
-        color = lib.mkForce "rgba(f9e2afcc)";
+        color = lib.mkForce "rgb(1e1e2e)";
         color_inactive = lib.mkForce "rgb(1e1e2e)";
       };
     };
