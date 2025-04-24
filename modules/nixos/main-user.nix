@@ -33,6 +33,7 @@ in
         "wheel"
         "networkManager"
         "plugdev"
+        "input"
       ];
       shell = cfg.shell;
       ignoreShellProgramCheck = true;
