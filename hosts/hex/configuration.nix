@@ -166,12 +166,13 @@
     enable = true;
   };
 
-  hardware.xpadneo.enable = true;
-  boot.blacklistedKernelModules = [ "xpad" ];
+  # hardware.xpadneo.enable = true;
+  # boot.blacklistedKernelModules = [ "xpad" ];
 
   services.udev = {
     enable = true;
     packages = with pkgs; [
+      xpad
       qmk-udev-rules
     ];
   };
