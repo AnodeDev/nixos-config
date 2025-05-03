@@ -19,6 +19,7 @@
     bc
     obsidian
     pcsx2
+    p7zip
 
     # Necessary (if something goes wrong)
     kitty
