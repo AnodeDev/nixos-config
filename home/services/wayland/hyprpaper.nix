@@ -23,5 +23,12 @@
     };
   };
 
-  systemd.user.services.hyprpaper.Unit.After = lib.mkForce "graphical-session.target";
+  systemd.user.services.hyprpaper = {
+    Unit = {
+      Description = "Hyprpaper wallpaper daemon";
+      After = [ "graphical-session.target" ];
+      ConditionEnvironment = "XDG_SESSION_DESKTOP=hyprland";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
 }
