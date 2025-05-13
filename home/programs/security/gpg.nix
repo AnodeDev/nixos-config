@@ -15,12 +15,11 @@
       tofu-policy = "good";
     };
   };
-
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
     defaultCacheTtl = 600;
     maxCacheTtl = 7200;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentry.package = pkgs.pinentry-curses;
   };
 }
