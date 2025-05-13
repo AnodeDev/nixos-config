@@ -37,27 +37,46 @@
         "normal $mod C close"
         "normal $mod Space toggle-float"
         "normal $mod F toggle-fullscreen"
+        "normal $mod P spawn \"wofi --show drun\""
 
         "normal $mod N focus-view left"
         "normal $mod E focus-view down"
         "normal $mod I focus-view up"
         "normal $mod O focus-view right"
 
-        "normal \"$mod+Shift\" N move-view left"
-        "normal \"$mod+Shift\" E move-view down"
-        "normal \"$mod+Shift\" I move-view up"
-        "normal \"$mod+Shift\" O move-view right"
+        "normal $mod+Shift N move-view left"
+        "normal $mod+Shift E move-view down"
+        "normal $mod+Shift I move-view up"
+        "normal $mod+Shift O move-view right"
 
-        "normal $mod P spawn \"tofi-drun --drun-launch=true\""
+        "normal $mod comma focus-output previous"
+        "normal $mod period focus-output next"
+
+        "normal $mod+Shift comma send-to-output previous"
+        "normal $mod+Shift period send-to-output next"
+
+        "normal $mod R enter-mode resize"
+
+        "resize N resize horizontal -20"
+        "resize E resize vertical 20"
+        "resize I resize vertical -20"
+        "resize O resize horizontal 20"
+        "resize Escape enter-mode normal"
       ];
     };
 
     extraConfig = ''
       way-displays &
+      mako &
       swww-daemon &
       swww img -o "HDMI-A-1" ~/Media/Wallpapers/pixel-sky.png
       swww img -o "DP-1" ~/Media/Wallpapers/pixel-sky.png
       rivertile -view-padding 6 -outer-padding 6 &
+
+      for i in $(seq 1 9); do
+        riverctl map normal $mod $i set-focused-tags $((1 << ($i - 1)))
+        riverctl map normal $mod+Shift $i set-view-tags $((1 << ($i - 1)))
+      done
     '';
   };
 }

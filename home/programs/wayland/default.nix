@@ -8,6 +8,7 @@
   imports = [
     ./hyprland
     ./river
+    ./wofi.nix
   ];
 
   home.packages = with pkgs; [

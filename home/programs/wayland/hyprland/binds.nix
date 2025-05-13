@@ -41,7 +41,7 @@ in {
 
       "$mod, M, exec, alacritty --class clipse -e clipse"
 
-      "$mod, P, exec, tofi-drun --drun-launch=true"
+      "$mod, P, exec, wofi --show drun"
     ]
       ++ workspaces;
   };

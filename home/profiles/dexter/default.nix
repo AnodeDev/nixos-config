@@ -21,7 +21,6 @@
     ghostty
 
     playerctl
-    tofi
     socat
     imagemagick
     fzf
