@@ -36,6 +36,11 @@
         comment = lib.mkForce "A minimal tiling compositor";
         binPath = "/run/current-system/sw/bin/river";
       };
+      maomao = {
+        prettyName = "MaoMaoWM";
+        comment = lib.mkForce "A minimal and pretty compositor";
+        binPath = "/run/current-system/sw/bin/maomao";
+      };
     };
   };
 }
