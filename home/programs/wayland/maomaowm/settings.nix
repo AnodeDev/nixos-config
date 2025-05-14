@@ -56,5 +56,12 @@
       bind=SUPER,c,quit
       bind=SUPER+SHIFT,c,killclient
     '';
+
+    autostart_sh = ''
+      way-displays &
+      mako &
+      swww-daemon &
+      swww img ~/Media/Wallpapers/dragon-slayer.png
+    '';
   };
 }
