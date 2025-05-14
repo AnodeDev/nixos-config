@@ -4,23 +4,13 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Maple Mono NF";
-      fontSize = "11";
-      background = "${./spaceman.png}";
-      loginBackground = true;
-    })
-  ];
-
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
 
     package = pkgs.kdePackages.sddm;
 
-    theme = "catppuccin-mocha";
+    theme = "where_is_my_sddm_theme";
   };
 
   programs.uwsm = {
