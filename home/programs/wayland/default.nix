@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./hyprland
+    ./maomaowm
     ./river
     ./wofi.nix
   ];

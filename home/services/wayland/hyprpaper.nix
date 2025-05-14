@@ -25,9 +25,8 @@
 
   systemd.user.services.hyprpaper = {
     Unit = {
-      Description = "Hyprpaper wallpaper daemon";
       After = [ "graphical-session.target" ];
-      ConditionEnvironment = "XDG_SESSION_DESKTOP=hyprland";
+      ConditionEnvironment = lib.mkForce "XDG_SESSION_DESKTOP=hyprland";
     };
     Install.WantedBy = [ "graphical-session.target" ];
   };

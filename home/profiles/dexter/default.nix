@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   imports = [
     ../../misc
 
@@ -8,6 +8,8 @@
     ../../programs/security
 
     ../../terminal
+
+    inputs.maomaowm.hmModules.maomaowm
   ];
 
   home = {
