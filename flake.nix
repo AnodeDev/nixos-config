@@ -38,8 +38,8 @@
           ./modules
           ./system
           inputs.home-manager.nixosModules.home-manager
-          inputs.nvf.nixosModules.default
           inputs.stylix.nixosModules.stylix
+          inputs.maomaowm.nixosModules.maomaowm
         ];
       };
     };
@@ -93,12 +93,9 @@
       };
     };
 
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
+    maomaowm = {
+      url = "github:DreamMaoMao/maomaowm";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     rust-overlay = {
