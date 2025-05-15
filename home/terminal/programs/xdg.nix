@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   browser = ["zen"];
@@ -42,6 +43,8 @@ in {
 
     mimeApps = {
       enable = true;
+      defaultApplications = lib.mkForce associations;
+      associations.added = lib.mkForce associations;
     };
   };
 
