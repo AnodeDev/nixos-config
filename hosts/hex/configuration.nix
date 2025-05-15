@@ -15,7 +15,11 @@
 
   # Bootloader
   boot = {
-    kernelParams = [ "threadirqs" ];
+    kernelParams = [
+      "threadirqs"
+      "video=DP-1:2560x1440@240"
+      "video=HDMI-A-1:1920x1080@60"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;

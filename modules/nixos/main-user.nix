@@ -34,6 +34,7 @@ in
         "networkManager"
         "plugdev"
         "input"
+        "seat"
       ];
       shell = cfg.shell;
       ignoreShellProgramCheck = true;

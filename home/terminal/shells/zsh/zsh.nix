@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   programs.zsh = {
@@ -24,5 +25,13 @@
       // lib.optionalAttrs config.programs.bat.enable {cat = "bat";};
 
     shellGlobalAliases = {eza = "eza --icons --git";};
+
+    profileExtra = ''
+      echo "ZPROFILE LOADED" >> /tmp/zprofile-debug.log
+
+      if [ "$(tty)" = "/dev/tty1" ] && [ -z "$WAYLAND_DISPLAY" ]; then
+        exec ${pkgs.uwsm}/bin/uwsm start select
+      fi
+    '';
   };
 }

@@ -1,18 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-
-    package = pkgs.kdePackages.sddm;
-
-    theme = "where_is_my_sddm_theme";
-  };
-
+{ lib, ... }: {
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
