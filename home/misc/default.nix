@@ -2,6 +2,7 @@
   imports = [
     ./cleanup.nix
     ./fonts.nix
+    ./gaming.nix
   ];
 
   home.packages = with pkgs; [
