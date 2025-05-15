@@ -26,7 +26,7 @@
   systemd.user.services.hyprpaper = {
     Unit = {
       After = [ "graphical-session.target" ];
-      ConditionEnvironment = lib.mkForce "XDG_SESSION_DESKTOP=hyprland";
+      ConditionEnvironment = lib.mkForce "XDG_SESSION_DESKTOP=Hyprland";
     };
     Install.WantedBy = [ "graphical-session.target" ];
   };
