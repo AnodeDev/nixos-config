@@ -26,6 +26,7 @@
         "normal $mod Space toggle-float"
         "normal $mod F toggle-fullscreen"
         "normal $mod P spawn \"wofi --show drun\""
+        "normal $mod M spawn \"ghostty --class='clipse' -e clipse\""
 
         "normal $mod N focus-view left"
         "normal $mod E focus-view down"
