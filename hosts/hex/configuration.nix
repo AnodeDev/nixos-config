@@ -141,9 +141,6 @@
     shell = pkgs.zsh;
   };
 
-  # Needed to get the executable in the correct location
-  programs.maomaowm.enable = true;
-
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };

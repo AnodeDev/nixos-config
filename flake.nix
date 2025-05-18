@@ -39,7 +39,6 @@
           ./system
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
-          inputs.maomaowm.nixosModules.maomaowm
         ];
       };
     };
@@ -91,11 +90,6 @@
         nixpkgs.follows = "hyprland/nixpkgs";
         systems.follows = "hyprland/systems";
       };
-    };
-
-    maomaowm = {
-      url = "github:DreamMaoMao/maomaowm";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     rust-overlay = {

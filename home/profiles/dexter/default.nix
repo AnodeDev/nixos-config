@@ -8,8 +8,6 @@
     ../../programs/security
 
     ../../terminal
-
-    inputs.maomaowm.hmModules.maomaowm
   ];
 
   home = {
