@@ -38,6 +38,11 @@
     seatd.enable = true;
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [fcitx5-hangul ];
+  };
+
   # Timezone
   time.timeZone = "Europe/Stockholm";
 
@@ -160,6 +165,8 @@
   };
 
   services.libinput.mouse.middleEmulation = false;
+
+  hardware.keyboard.qmk.enable = true;
 
   # DO NOT TOUCH!!!!!
   system.stateVersion = "24.05";
