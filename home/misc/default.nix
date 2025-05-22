@@ -9,6 +9,7 @@
     # Media
     sayonara
     floorp
+    rmpc
 
     # Social
     vesktop

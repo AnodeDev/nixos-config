@@ -7,6 +7,8 @@
     ../../programs/wayland
     ../../programs/security
 
+    ../../services/media
+
     ../../terminal
   ];
 
