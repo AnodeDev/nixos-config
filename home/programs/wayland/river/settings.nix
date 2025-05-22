@@ -52,7 +52,7 @@
       way-displays &
       mako &
       swww-daemon &
-      swww img ~/Media/Wallpapers/dragon-slayer.png
+      swww img ~/Media/Wallpapers/pixel-city.png
       rivertile -view-padding 6 -outer-padding 6 &
       riverctl hide-cursor when-typing enabled
 
