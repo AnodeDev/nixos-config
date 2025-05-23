@@ -13,6 +13,11 @@
       # Enables Server Side Decorations (SSD)
       rule-add = [
         "-app-id '*' ssd"
+        "-app-id 'zen*' tags 1"
+        "-app-id 'zen*' output HDMI-A-1"
+        "-app-id '*ghostty' tags 1"
+        "-app-id '*ghostty' output DP-1"
+        "-title 'clipse' float"
       ];
 
       default-layout = "rivertile";
