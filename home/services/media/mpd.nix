@@ -16,8 +16,8 @@
     extraConfig = ''
       log_file  "~/.local/cache/mpd/mpd.log"
       audio_output {
-        type    "jack"
-        name    "PCH"
+        type    "pulse"
+        name    "MPD Pulse Output"
       }
     '';
   };
