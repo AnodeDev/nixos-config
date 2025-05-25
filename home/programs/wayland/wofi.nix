@@ -4,29 +4,40 @@
     package = pkgs.wofi;
 
     settings = lib.mkForce {
-      location = "top_left";
+      location = "center";
       width = 800;
-      monitor = "DP-1";
     };
 
     style = lib.mkForce ''
-      window {
-        font-family = "Maple Mono NF";
-        font-size = 12px;
+      * {
+        font-family: "Maple Mono NF";
+        font-size: 18px;
+        color: #cdd6f4;
+      }
 
-        margin = 5px;
-        border = 1px solid #cdd6f4;
-        background-color = #181825;
+      window {
+        font-family: "Maple Mono NF";
+        font-size: 12px;
+
+        margin: 5px;
+        background-color: #181825;
       }
 
       #input {
         margin: 5px;
-        border: 1px solid #f9e2af;
         background-color: #1e1e2e;
       }
 
       #entry {
         background-color: #181825;
+      }
+
+      #entry:selected {
+        background-color: #181825;
+      }
+  
+      #text:selected {
+        color: #a6e3a1;
       }
     '';
   };
