@@ -1,7 +1,3 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  home.packages = [ inputs.swww.packages.${pkgs.system}.swww ];
+{ pkgs, ... }: {
+  home.packages = [ pkgs.swww ];
 }
