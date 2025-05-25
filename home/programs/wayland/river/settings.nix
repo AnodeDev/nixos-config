@@ -8,7 +8,7 @@
     settings = {
       border-color-focused = lib.mkForce "0xcdd6f4";
       border-color-unfocused = lib.mkForce "0xcdd6f4";
-      border-width = 2;
+      border-width = 0;
 
       # Enables Server Side Decorations (SSD)
       rule-add = [
@@ -58,7 +58,7 @@
       mako &
       clipse -listen
       swww-daemon &
-      swww img ~/Media/Wallpapers/pixel-city.png
+      swww img ~/Media/Wallpapers/landscape.png
       rivertile -view-padding 6 -outer-padding 6 &
       riverctl hide-cursor when-typing enabled
 
