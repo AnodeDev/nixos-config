@@ -19,6 +19,7 @@
     shellAliases = {
       l = "eza -l";
       la = "eza -la";
+      tree = "eza --tree";
       passpers = "PASSWORD_STORE_DIR=~/Personal/Secret/.pass/personal pass";
       passprof = "PASSWORD_STORE_DIR=~/Personal/Secret/.pass/professional pass";
     }

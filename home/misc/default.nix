@@ -22,6 +22,8 @@
     obsidian
     pcsx2
     p7zip
+    fd
+    mpc
 
     # Necessary (if something goes wrong)
     kitty
